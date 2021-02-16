@@ -19,6 +19,9 @@ After it's completed the world will be provided with another piece of entertainm
     * There will be a friendly NPC that will assist 
       the player at the end of each area excluding
       the final area
+   * Menus for the player to use in-game
+     * Skills
+     * Items
   
 * Out of Scope  
   * Incorporate sounds
