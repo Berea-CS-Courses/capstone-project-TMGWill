@@ -10,32 +10,36 @@
 * Menus
   * Non-combat
     * Start menu
-       * start game
-         * Option to start and play the main game 
-       *  tutorial
-         * Will teach player about game and their options 
+      * start game
+        * Option to start and play the main game 
+      * tutorial
+        * Will teach player about game and their options 
   * Combat
     * Attack
     * Defend
     * Skills 
     * Items 
 * Theme for Areas
-  * 
 * Objective
   * Journey to defeat the Big Bad
   * Gladiator Arena Style 
     * Probably no movement more combat focused
 * Enemies
+  * Will be similar to player but more limited in options
+    * Will have attack, defend, skill(s), probably not items?
 * Layout
-  *  Events
+  * Events
 * Traversal
-  *  With Quest the problem of how the player will move can be handled with program
+  * Give player options to move in a certain direction
+    * Left, Right, Forward
+      *  Back?
   *  Find appropiate spots to restrict player movement and when to implement them
      *  When moving to a different zone
      *  After doing an event  
 * Class(es)
+  * Will determine skills and starting stats
 * Skills
-  * All from begining or unlocking them?
+  * Make available all from begining or unlocking them?
   * Abilities that can affect enemy or player
     * Damage
     * Heal
