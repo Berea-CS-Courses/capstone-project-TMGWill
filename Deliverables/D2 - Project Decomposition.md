@@ -8,7 +8,23 @@
     * Each class will have starting stats that can be improved with points at 
       the beginning and weapon in use
 * Menus
+  * Non-combat
+    * Start menu
+       * start game
+         * Option to start and play the main game 
+       *  tutorial
+         * Will teach player about game and their options 
+  * Combat
+    * Attack
+    * Defend
+    * Skills 
+    * Items 
 * Theme for Areas
+  * 
+* Objective
+  * Journey to defeat the Big Bad
+  * Gladiator Arena Style 
+    * Probably no movement more combat focused
 * Enemies
 * Layout
   *  Events
@@ -20,3 +36,20 @@
 * Class(es)
 * Skills
   * All from begining or unlocking them?
+  * Abilities that can affect enemy or player
+    * Damage
+    * Heal
+      * Possible additions
+        *  Buffs
+        *  Debuffs
+* Items
+  * Healing 
+  * Possible additions
+    *  Buffs
+* Equipment
+  * Way to view?
+  * Weapons
+    * Increase stats
+  * Armor
+    * Damage reduction
+
