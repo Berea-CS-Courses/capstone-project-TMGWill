@@ -58,25 +58,27 @@
     * Will affect certain skills
 * Theme for Areas
   * E.g. one area could be humans, another area could be animals, and so on and so forth
-    * This will influence their stats, weapons, armor, and other things related to character
+    * This will influence how I determine their stats, weapons, armor, and other things related to character
 * Enemies
   * Will be similar to player but more limited in options
     * Will have attack, defend, skill(s)
 * Layout
-  * Create structure for where to have rooms that will either have enemies, be empty, or events
-  * Enemies
-    * A room that will involve combat
-  * Empty
-    * A room that will be empty and uneventful
-  * Events
-    * A room that could be combat, a treasure (something that will benefit the player), or maybe something that has no impact beyond entertainment purposes
+  * The general idea is that one area will have various rooms 
+  * Create structure and determine where to have rooms that will either have enemies, be empty, or events for the player to traverse
+    * Enemies
+      * A room that will involve combat
+    * Empty
+      * A room that will be empty and uneventful
+    * Events
+      * A room that could be combat, a treasure (something that will benefit the player), or maybe something that has no impact beyond entertainment purposes
 * Traversal
   * Give player options to move in a certain direction
     * Left, Right, Forward, Back
   * Keep track of position
+    * This will determine what options they have depending on where they are
   *  Find appropiate spots to restrict player movement and when to implement them
-     *  When moving to a different zone not allowing player to go back
-     *  After doing an event not allowing player to go back
+     *  When moving to a different area and not allowing player to go back
+     *  After doing an event and not allowing player to go back
 * Class(es)
   * Will determine skills and starting stats
   * Warrior
@@ -110,6 +112,6 @@
     *  Buffs
 * Narrative
   * Needed for story-telling
-    * Will tell player about overall story
-    * Will tell player about areas
-    * Will be involved with certain events
+    * Will tell player about overall story at certain point(s)
+    * Will tell player about areas at certain point(s)
+    * Will be involved with certain events at certain point(s)
