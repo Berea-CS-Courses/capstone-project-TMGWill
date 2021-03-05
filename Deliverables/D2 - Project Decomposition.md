@@ -56,6 +56,14 @@
   * Constitution
     * Will affect all classes with health
     * Will affect certain skills
+* Traversal
+  * Give player options to move in a certain direction
+    * Left, Right, Forward, Back
+  * Keep track of position
+    * This will determine what options they have depending on where they are
+  *  Find appropiate spots to restrict player movement and when to implement them
+     *  When moving to a different area and not allowing player to go back
+     *  After doing an event and not allowing player to go back
 * Theme for Areas
   * E.g. one area could be humans, another area could be animals, and so on and so forth
     * This will influence how I determine their stats, weapons, armor, and other things related to character
@@ -71,14 +79,6 @@
       * A room that will be empty and uneventful
     * Events
       * A room that could be combat, a treasure (something that will benefit the player), or maybe something that has no impact beyond entertainment purposes
-* Traversal
-  * Give player options to move in a certain direction
-    * Left, Right, Forward, Back
-  * Keep track of position
-    * This will determine what options they have depending on where they are
-  *  Find appropiate spots to restrict player movement and when to implement them
-     *  When moving to a different area and not allowing player to go back
-     *  After doing an event and not allowing player to go back
 * Class(es)
   * Will determine skills and starting stats
   * Warrior
