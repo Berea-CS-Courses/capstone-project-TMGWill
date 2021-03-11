@@ -1,8 +1,8 @@
 **Will Pratt**
 
 ![Pics 1-5](/Deliverables/Storyboard%201-5.JPG)
-
 *After player left event room they lost the ability to enter that room again*
+\
 ![Pics 6](/Deliverables/Storyboard%206.JPG)
 \
 *The player can either type out "skills" or "3" to access that option.*
