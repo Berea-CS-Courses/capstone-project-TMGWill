@@ -1,5 +1,7 @@
 **Will Pratt**
-
+\
+Storyboard
+\
 ![Pics 1-5](/Deliverables/Storyboard%201-5.JPG)
 *After player left event room they lost the ability to enter that room again.*
 \
@@ -15,7 +17,11 @@
 *Adding question mark after "attack" or "1" brought up the information for it.*
 \
 \
+Data Flow Diagram
+\
 ![Data Flow Diagram](/Deliverables/Data%20Flow%20Diagram.png)
 \
+\
+Lo-Fi Prototype
 \
 https://xd.adobe.com/view/01366e0e-3cca-4340-8d5b-2420689dbb89-5465/?fullscreen&hints=off
