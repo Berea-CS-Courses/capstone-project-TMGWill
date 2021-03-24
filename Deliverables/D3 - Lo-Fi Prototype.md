@@ -19,12 +19,12 @@ Storyboard
 \
 Data Flow Diagram
 \
-![Data Flow Diagram](/Deliverables/Data%20Flow%20Diagram.png)
+![Data Flow Diagram](/Deliverables/Data%20Flow%20Diagram.jpg)
 \
 \
 Lo-Fi Prototype
 \
-https://xd.adobe.com/view/01366e0e-3cca-4340-8d5b-2420689dbb89-5465/?fullscreen&hints=off
+https://xd.adobe.com/view/01366e0e-3cca-4340-8d5b-2420689dbb89-5465/
 \
 (Might have to scroll up and down when using prototype)
 \
