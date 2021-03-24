@@ -19,7 +19,7 @@ Storyboard
 \
 Data Flow Diagram
 \
-![Data Flow Diagram](/Deliverables/Data%20Flow%20Diagram.png)
+![Data Flow Diagram](/Deliverables/Data%20Flow%20Diagram.jpg)
 \
 \
 Lo-Fi Prototype
