@@ -13,7 +13,7 @@ p_attack_mod = random.uniform(1.2, 1.6)
 
 Enemy_HP = 20
 Max_Enemy_HP = Enemy_HP
-e_strength = 5
+e_strength = 10
 e_dexterity = 5
 e_intelligence = 5
 e_constitution = 7
@@ -316,6 +316,7 @@ while combat:
                 print("You Win")
                 combat = False
                 break
+            print("end turn")
     else:
         e_defence = True
         combat = True
@@ -328,3 +329,6 @@ while combat:
         elif Enemy_HP <= 0:
             print("You Win")
             combat = False
+            break
+        print("enemy defend")
+        print("end turn")
