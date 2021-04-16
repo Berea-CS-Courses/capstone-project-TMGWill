@@ -28,7 +28,7 @@ class warrior:
         self.double_cdt = 3
         self.double_cd = 0
 
-        self.player_items = []
+        self.player_items = ["Small Health Potion"]
 
     def new_max_hp(self):
         self.max_hp = self.stats[3] * 4
@@ -48,6 +48,11 @@ class bad_warrior:
         self.bad_warrior_menu = ["attack", "defend", "skills"]
         self.bad_warrior_skills = ["big swing", "double swing"]
 
+        self.enemy_big_cdt = 4
+        self.enemy_big_cd = 0
+        self.enemy_double_cdt = 3
+        self.enemy_double_cd = 0
+
 
 class wolf:
     """
@@ -62,3 +67,8 @@ class wolf:
         self.wolf_hp = self.wolf_max_hp
         self.wolf_menu = ["attack", "defend", "skills"]
         self.wolf_skills = ["maul", "rend"]
+
+        self.enemy_maul_cdt = 5
+        self.enemy_maul_cd = 0
+        self.enemy_rend_cdt = 3
+        self.enemy_rend_cd = 0
