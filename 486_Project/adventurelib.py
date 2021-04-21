@@ -550,7 +550,7 @@ def prompt():
 
 def no_command_matches(command):
     """Called when a command is not understood."""
-    print("I don't understand '%s'." % command)
+    print("I believe there was a typo, hero. What's '%s'?" % command)
 
 
 def when(command, context=None, **kwargs):
