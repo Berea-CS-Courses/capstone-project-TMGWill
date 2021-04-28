@@ -1,10 +1,11 @@
 from Characters_Class import *
+from time import *
 import random
 
 
 class warrior_fight:
 
-    def __init__(self, fighting_player=warrior(), fighting_enemy=bad_warrior()):
+    def __init__(self, fighting_player=Warrior(), fighting_enemy=Bad_warrior()):
         self.fighting_player = fighting_player
         self.fighting_enemy = fighting_enemy
         self.combat = True
@@ -23,7 +24,7 @@ class warrior_fight:
         while self.combat:
             self.player_defence = False
             self.enemy_defence = False
-
+            sleep(0.35)
             attack_mod = random.uniform(1.2, 1.6)
 
             print("Player HP:" + " " + str(self.fighting_player.warrior_hp) + "/" + str(self.fighting_player.warrior_max_hp))
@@ -40,7 +41,9 @@ class warrior_fight:
                     self.warrior_damage = self.warrior_damage//2
 
                 self.fighting_enemy.bad_warrior_hp = self.fighting_enemy.bad_warrior_hp - self.warrior_damage
-                print("You deal" + " " + str(self.warrior_damage) + " " + "damage")
+                print("Using " + self.fighting_player.weapon[4] + ", you strike the enemy and deal ", end="")
+                sleep(0.5)
+                print(str(self.warrior_damage) + " damage")
                 self.combat = True
 
                 if self.fighting_player.big_cd != 0:
@@ -67,7 +70,7 @@ class warrior_fight:
 
                 print("End Turn")
             elif action_choice == "attack?":
-                print("You deal" + " " + str(round(self.fighting_player.stats[0] * 1.2)) + "-" + str(round(self.fighting_player.stats[0] * 1.6)) + " " + "attack damage")
+                print("With " + self.fighting_player.weapon[4] + " you deal " + str(round(self.fighting_player.stats[0] * 1.2)) + "-" + str(round(self.fighting_player.stats[0] * 1.6)) + " attack damage.")
                 continue
 
             elif action_choice == "defend":
@@ -95,7 +98,8 @@ class warrior_fight:
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
                     break
-
+                print("You ready yourself for the enemy's next attack.")
+                sleep(0.5)
                 print("End Turn")
 
             elif action_choice == "skills":
@@ -113,7 +117,9 @@ class warrior_fight:
                         self.warrior_damage = self.warrior_damage//2
 
                     self.fighting_enemy.bad_warrior_hp = self.fighting_enemy.bad_warrior_hp - self.warrior_damage
-                    print("You deal" + " " + str(self.warrior_damage) + " " + "damage")
+                    print("You raise " + self.fighting_player.weapon[4] + " aloft to deliver a mighty blow and deal ", end="")
+                    sleep(0.5)
+                    print(str(self.warrior_damage) + " " + "damage")
                     self.combat = True
 
                     self.fighting_player.big_cd = 4
@@ -140,13 +146,14 @@ class warrior_fight:
                     print("End Turn")
 
                 elif skill_choice == "big swing?":
-                    print("Deal two attacks in one move." + "\n" + "Cooldown Time: " + str(self.fighting_player.big_cdt) + "\n" + "Current Cooldown: " + str(self.fighting_player.big_cd))
+                    print("Deal out a strong attack." + "\n" + "Cooldown Time: " + str(self.fighting_player.big_cdt) + "\n" + "Current Cooldown: " + str(self.fighting_player.big_cd))
                     continue
 
                 elif skill_choice == "double swing":
                     if self.fighting_player.double_cd != 0:
                         print("nope")
                         continue
+                    print("Using " + self.fighting_player.weapon[4] + " you strike twice in one fell swoop.")
                     for i in range(2):
                         double_attack_mod = random.uniform(1.2, 1.6)
                         self.warrior_attack = round(self.fighting_player.stats[0] * double_attack_mod)
@@ -157,6 +164,7 @@ class warrior_fight:
                             self.warrior_damage = self.warrior_damage//2
 
                         self.fighting_enemy.bad_warrior_hp = self.fighting_enemy.bad_warrior_hp - self.warrior_damage
+                        sleep(0.5)
                         print("You deal" + " " + str(self.warrior_damage) + " " + "damage")
                     self.combat = True
 
@@ -207,18 +215,24 @@ class warrior_fight:
                         if self.fighting_player.warrior_hp > self.fighting_player.warrior_max_hp:
                             self.fighting_player.warrior_hp = self.fighting_player.warrior_max_hp
                         self.fighting_player.player_items.remove('Small Health Potion')
+                        print("Your wounds begin to heal.")
+                        sleep(0.5)
                     elif item_choice == "mhp" and "Medium Health Potion" in self.fighting_player.player_items:
                         # change to functions?
                         self.fighting_player.warrior_hp += 20
                         if self.fighting_player.warrior_hp > self.fighting_player.warrior_max_hp:
                             self.fighting_player.warrior_hp = self.fighting_player.warrior_max_hp
                         self.fighting_player.player_items.remove('Medium Health Potion')
+                        print("Your wounds begin to heal.")
+                        sleep(0.5)
                     elif item_choice == "lhp" and "Large Health Potion" in self.fighting_player.player_items:
                         # change to functions?
                         self.fighting_player.warrior_hp += 30
                         if self.fighting_player.warrior_hp > self.fighting_player.warrior_max_hp:
                             self.fighting_player.warrior_hp = self.fighting_player.warrior_max_hp
                         self.fighting_player.player_items.remove('Large Health Potion')
+                        print("Your wounds begin to heal.")
+                        sleep(0.5)
                     elif item_choice == "back":
                         continue
                     else:
@@ -227,6 +241,7 @@ class warrior_fight:
             else:
                 print("Try Again")
                 continue
+            sleep(0.5)
 
             while self.combat:
                 enemy_action = random.choice(self.fighting_enemy.bad_warrior_menu)
@@ -240,7 +255,9 @@ class warrior_fight:
                         self.enemy_damage = self.enemy_damage//2
 
                     self.fighting_player.warrior_hp = self.fighting_player.warrior_hp - self.enemy_damage
-                    print("Enemy deals" + " " + str(self.enemy_damage) + " " + "damage")
+                    print("The enemy, " + self.fighting_enemy.name + " swings their crude weapon and deals ", end="")
+                    sleep(0.5)
+                    print(str(self.enemy_damage) + " damage")
                     self.combat = True
 
                     if self.fighting_enemy.enemy_big_cd != 0:
@@ -265,6 +282,7 @@ class warrior_fight:
                         self.combat = False
                         break
                     print("End Turn")
+                    sleep(0.5)
                     break
 
                 elif enemy_action == "skills":
@@ -281,7 +299,9 @@ class warrior_fight:
                             self.enemy_damage = self.enemy_damage//2
 
                         self.fighting_player.warrior_hp = self.fighting_player.warrior_hp - self.enemy_damage
-                        print("Enemy deals" + " " + str(self.enemy_damage) + " " + "damage")
+                        print("The " + self.fighting_enemy.name + " lifts their weapon for a strong blow and deals ", end="")
+                        sleep(0.5)
+                        print(str(self.enemy_damage) + " damage")
                         self.combat = True
 
                         self.fighting_enemy.enemy_big_cd = 4
@@ -305,11 +325,13 @@ class warrior_fight:
                             self.combat = False
                             break
                         print("End Turn")
+                        sleep(0.5)
                         break
                     elif enemy_skill == "double swing":
                         if self.fighting_enemy.enemy_double_cd != 0:
                             print("enemy double nope")
                             continue
+                        print("The " + self.fighting_enemy.name + " manages to strike twice.")
                         for i in range(2):
                             double_attack_mod = random.uniform(1.2, 1.6)
                             self.enemy_attack = round(self.fighting_enemy.stats[0] * double_attack_mod)
@@ -320,7 +342,8 @@ class warrior_fight:
                                 self.enemy_damage = self.enemy_damage//2
 
                             self.fighting_player.warrior_hp = self.fighting_player.warrior_hp - self.enemy_damage
-                            print("Enemy deals" + " " + str(self.enemy_damage) + " " + "damage")
+                            sleep(0.5)
+                            print(self.fighting_enemy.name + " deals " + str(self.enemy_damage) + " damage")
                         self.combat = True
 
                         self.fighting_enemy.enemy_double_cd = 3
@@ -344,6 +367,7 @@ class warrior_fight:
                             self.combat = False
                             break
                         print("End Turn")
+                        sleep(0.5)
                         break
                 else:
                     self.enemy_defence = True
@@ -370,8 +394,9 @@ class warrior_fight:
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
                         break
-                    print("Enemy Defends")
+                    print("The " + self.fighting_enemy.name + " readies for your next attack.")
                     print("End Turn")
+                    sleep(0.5)
                     break
 
     def warrior_second_vs_bad_warrior(self):
@@ -702,9 +727,9 @@ class warrior_fight:
                     continue
 
 
-class wolf_fight:
+class Wolf_fight:
 
-    def __init__(self, fighting_player=warrior(), fighting_enemy=wolf()):
+    def __init__(self, fighting_player=Warrior(), fighting_enemy=Wolf()):
         self.fighting_player = fighting_player
         self.fighting_enemy = fighting_enemy
         # self.attack_mod = random.uniform(1.2, 1.6)
@@ -728,12 +753,10 @@ class wolf_fight:
         self.combat = True
 
         while self.combat:
-            print("big cd:" + str(self.fighting_player.big_cd))
-            print("double cd:" + str(self.fighting_player.double_cd))
-
-            attack_mod = random.uniform(1.2, 1.6)
             self.player_defence = False
             self.enemy_defence = False
+            sleep(0.35)
+            attack_mod = random.uniform(1.2, 1.6)
 
             print("Player HP:" + " " + str(self.fighting_player.warrior_hp) + "/" + str(self.fighting_player.warrior_max_hp))
             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.wolf_hp) + "/" + str(self.fighting_enemy.wolf_max_hp))
@@ -749,7 +772,9 @@ class wolf_fight:
                     self.warrior_damage = self.warrior_damage//2
 
                 self.fighting_enemy.wolf_hp = self.fighting_enemy.wolf_hp - self.warrior_damage
-                print("You deal" + " " + str(self.warrior_damage) + " " + "damage")
+                print("Using " + self.fighting_player.weapon[4] + ", you strike the enemy and deal ", end="")
+                sleep(0.5)
+                print(str(self.warrior_damage) + " damage")
                 self.combat = True
 
                 if self.fighting_player.big_cd != 0:
@@ -776,7 +801,7 @@ class wolf_fight:
 
                 print("End Turn")
             elif action_choice == "attack?":
-                print("You deal" + " " + str(round(self.fighting_player.stats[0] * 1.2)) + "-" + str(round(self.fighting_player.stats[0] * 1.6)) + " " + "attack damage")
+                print("With " + self.fighting_player.weapon[4] + " you deal " + str(round(self.fighting_player.stats[0] * 1.2)) + "-" + str(round(self.fighting_player.stats[0] * 1.6)) + " attack damage.")
                 continue
 
             elif action_choice == "defend":
@@ -804,7 +829,8 @@ class wolf_fight:
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
                     break
-
+                print("You ready yourself for the enemy's next attack.")
+                sleep(0.5)
                 print("End Turn")
 
             elif action_choice == "skills":
@@ -814,15 +840,17 @@ class wolf_fight:
                     if self.fighting_player.big_cd != 0:
                         print("nope")
                         continue
-                    rend_attack_mod = random.uniform(2.1, 2.5)
-                    self.warrior_attack = round(self.fighting_player.stats[0] * rend_attack_mod)
+                    big_attack_mod = random.uniform(2.1, 2.5)
+                    self.warrior_attack = round(self.fighting_player.stats[0] * big_attack_mod)
                     self.warrior_damage = self.warrior_attack - self.fighting_enemy.wolf_armor
 
                     if self.enemy_defence is True:
                         self.warrior_damage = self.warrior_damage//2
 
                     self.fighting_enemy.wolf_hp = self.fighting_enemy.wolf_hp - self.warrior_damage
-                    print("You deal" + " " + str(self.warrior_damage) + " " + "damage")
+                    print("You raise " + self.fighting_player.weapon[4] + " aloft to deliver a mighty blow and deal ", end="")
+                    sleep(0.5)
+                    print(str(self.warrior_damage) + " " + "damage")
                     self.combat = True
 
                     self.fighting_player.big_cd = 4
@@ -848,13 +876,17 @@ class wolf_fight:
                     print("End Turn")
 
                 elif skill_choice == "big swing?":
-                    print("Deal two attacks in one move." + "\n" + "Cooldown Time: " + str(self.fighting_player.big_cdt) + "\n" + "Current Cooldown: " + str(self.fighting_player.big_cd))
+                    print("Deal out a strong attack." + "\n" + "Cooldown Time: " + str(self.fighting_player.big_cdt) + "\n" + "Current Cooldown: " + str(self.fighting_player.big_cd))
                     continue
 
                 elif skill_choice == "double swing":
+                    if self.fighting_player.double_cd != 0:
+                        print("nope")
+                        continue
+                    print("Using " + self.fighting_player.weapon[4] + " you strike twice in one fell swoop.")
                     for i in range(2):
-                        maul_attack_mod = random.uniform(1.2, 1.6)
-                        self.warrior_attack = round(self.fighting_player.stats[0] * maul_attack_mod)
+                        double_attack_mod = random.uniform(1.2, 1.6)
+                        self.warrior_attack = round(self.fighting_player.stats[0] * double_attack_mod)
                         self.warrior_damage = self.warrior_attack - self.fighting_enemy.wolf_armor
 
                         # checks if enemy is defending
@@ -862,6 +894,7 @@ class wolf_fight:
                             self.warrior_damage = self.warrior_damage//2
 
                         self.fighting_enemy.wolf_hp = self.fighting_enemy.wolf_hp - self.warrior_damage
+                        sleep(0.5)
                         print("You deal" + " " + str(self.warrior_damage) + " " + "damage")
                     self.combat = True
 
@@ -914,8 +947,22 @@ class wolf_fight:
                         if self.fighting_player.warrior_hp > self.fighting_player.warrior_max_hp:
                             self.fighting_player.warrior_hp = self.fighting_player.warrior_max_hp
                             self.fighting_player.player_items.remove('Small Health Potion')
-                            # break
-                            # continue
+                    elif item_choice == "mhp" and "Medium Health Potion" in self.fighting_player.player_items:
+                        # change to functions?
+                        self.fighting_player.warrior_hp += 20
+                        if self.fighting_player.warrior_hp > self.fighting_player.warrior_max_hp:
+                            self.fighting_player.warrior_hp = self.fighting_player.warrior_max_hp
+                        self.fighting_player.player_items.remove('Medium Health Potion')
+                        print("Your wounds begin to heal.")
+                        sleep(0.5)
+                    elif item_choice == "lhp" and "Large Health Potion" in self.fighting_player.player_items:
+                        # change to functions?
+                        self.fighting_player.warrior_hp += 30
+                        if self.fighting_player.warrior_hp > self.fighting_player.warrior_max_hp:
+                            self.fighting_player.warrior_hp = self.fighting_player.warrior_max_hp
+                        self.fighting_player.player_items.remove('Large Health Potion')
+                        print("Your wounds begin to heal.")
+                        sleep(0.5)
                     elif item_choice == "back":
                         # break
                         continue
@@ -925,53 +972,30 @@ class wolf_fight:
             else:
                 print("Try Again")
                 continue
+            sleep(0.5)
 
-            # str or dex for mod?
-            enemy_action = random.choice(self.fighting_enemy.wolf_menu)
+            while self.combat:
+                enemy_action = random.choice(self.fighting_enemy.wolf_menu)
 
-            if enemy_action == "attack":
-                enemy_attack_mod = random.uniform(1.2, 1.6)
-                self.enemy_attack = round(self.fighting_enemy.stats[0] * enemy_attack_mod)
-                self.enemy_damage = self.enemy_attack - self.fighting_player.warrior_armor
-
-                if self.player_defence is True:
-                    self.enemy_damage = self.enemy_damage//2
-
-                self.fighting_player.warrior_hp = self.fighting_player.warrior_hp - self.enemy_damage
-                print("Enemy deals" + " " + str(self.enemy_damage) + " " + "damage")
-                self.combat = True
-
-                if self.fighting_player.warrior_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.warrior_hp) + "/" + str(self.fighting_player.warrior_max_hp))
-                    print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.wolf_hp) + "/" + str(self.fighting_enemy.wolf_max_hp))
-                    print("Game Over")
-                    quit()
-                elif self.fighting_player.warrior_hp <= 0 and self.fighting_enemy.wolf_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.warrior_hp) + "/" + str(self.fighting_player.warrior_max_hp))
-                    print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.wolf_hp) + "/" + str(self.fighting_enemy.wolf_max_hp))
-                    print("Game Over")
-                    quit()
-                elif self.fighting_enemy.wolf_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.warrior_hp) + "/" + str(self.fighting_player.warrior_max_hp))
-                    print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.wolf_hp) + "/" + str(self.fighting_enemy.wolf_max_hp))
-                    print("You defeated the enemy" + " " + self.fighting_enemy.name)
-                    self.combat = False
-                    break
-                print("End Turn")
-
-            elif enemy_action == "skills":
-                enemy_skill = random.choice(self.fighting_enemy.wolf_skills)
-                if enemy_skill == "rend":
-                    rend_attack_mod = random.uniform(1.6, 1.8)
-                    self.enemy_attack = round(self.fighting_enemy.stats[1] * rend_attack_mod)
+                if enemy_action == "attack":
+                    enemy_attack_mod = random.uniform(1.2, 1.6)
+                    self.enemy_attack = round(self.fighting_enemy.stats[0] * enemy_attack_mod)
                     self.enemy_damage = self.enemy_attack - self.fighting_player.warrior_armor
 
                     if self.player_defence is True:
                         self.enemy_damage = self.enemy_damage//2
 
                     self.fighting_player.warrior_hp = self.fighting_player.warrior_hp - self.enemy_damage
-                    print("Enemy deals" + " " + str(self.enemy_damage) + " " + "damage")
+                    print("The enemy, " + self.fighting_enemy.name + " rabidly attacks and deals ", end="")
+                    sleep(0.5)
+                    print(str(self.enemy_damage) + " damage")
                     self.combat = True
+
+                    if self.fighting_enemy.enemy_maul_cd != 0:
+                        self.fighting_enemy.enemy_maul_cd -= 1
+                    if self.fighting_enemy.enemy_rend_cd != 0:
+                        self.fighting_enemy.enemy_rend_cd -= 1
+
                     if self.fighting_player.warrior_hp <= 0:
                         print("Player HP:" + " " + str(self.fighting_player.warrior_hp) + "/" + str(self.fighting_player.warrior_max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.wolf_hp) + "/" + str(self.fighting_enemy.wolf_max_hp))
@@ -989,19 +1013,102 @@ class wolf_fight:
                         self.combat = False
                         break
                     print("End Turn")
-                elif enemy_skill == "maul":
-                    for i in range(3):
-                        maul_attack_mod = random.uniform(1.2, 1.3)
-                        self.enemy_attack = round(self.fighting_enemy.stats[1] * maul_attack_mod)
+                    sleep(0.5)
+                    break
+
+                elif enemy_action == "skills":
+                    enemy_skill = random.choice(self.fighting_enemy.wolf_skills)
+                    if enemy_skill == "rend":
+                        if self.fighting_enemy.enemy_rend_cd != 0:
+                            print("enemy rend nope")
+                            continue
+                        rend_attack_mod = random.uniform(1.6, 1.8)
+                        self.enemy_attack = round(self.fighting_enemy.stats[1] * rend_attack_mod)
                         self.enemy_damage = self.enemy_attack - self.fighting_player.warrior_armor
 
-                        # checks if enemy is defending
                         if self.player_defence is True:
                             self.enemy_damage = self.enemy_damage//2
 
                         self.fighting_player.warrior_hp = self.fighting_player.warrior_hp - self.enemy_damage
-                        print("Enemy deals" + " " + str(self.enemy_damage) + " " + "damage")
+                        print("The " + self.fighting_enemy.name + " lunges with their claws and deals ", end="")
+                        sleep(0.5)
+                        print(str(self.enemy_damage) + " damage")
+                        self.combat = True
+
+                        self.fighting_enemy.enemy_rend_cd = 3
+                        if self.fighting_enemy.enemy_maul_cd != 0:
+                            self.fighting_enemy.enemy_maul_cd -= 1
+
+                        if self.fighting_player.warrior_hp <= 0:
+                            print("Player HP:" + " " + str(self.fighting_player.warrior_hp) + "/" + str(self.fighting_player.warrior_max_hp))
+                            print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.wolf_hp) + "/" + str(self.fighting_enemy.wolf_max_hp))
+                            print("Game Over")
+                            quit()
+                        elif self.fighting_player.warrior_hp <= 0 and self.fighting_enemy.wolf_hp <= 0:
+                            print("Player HP:" + " " + str(self.fighting_player.warrior_hp) + "/" + str(self.fighting_player.warrior_max_hp))
+                            print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.wolf_hp) + "/" + str(self.fighting_enemy.wolf_max_hp))
+                            print("Game Over")
+                            quit()
+                        elif self.fighting_enemy.wolf_hp <= 0:
+                            print("Player HP:" + " " + str(self.fighting_player.warrior_hp) + "/" + str(self.fighting_player.warrior_max_hp))
+                            print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.wolf_hp) + "/" + str(self.fighting_enemy.wolf_max_hp))
+                            print("You defeated the enemy" + " " + self.fighting_enemy.name)
+                            self.combat = False
+                            break
+                        print("End Turn")
+                        sleep(0.5)
+                        break
+                    elif enemy_skill == "maul":
+                        if self.fighting_enemy.enemy_maul_cd != 0:
+                            print("enemy maul nope")
+                            continue
+                        print("The " + self.fighting_enemy.name + " bites you with a savage grip.")
+                        for i in range(3):
+                            maul_attack_mod = random.uniform(1.2, 1.3)
+                            self.enemy_attack = round(self.fighting_enemy.stats[1] * maul_attack_mod)
+                            self.enemy_damage = self.enemy_attack - self.fighting_player.warrior_armor
+
+                            # checks if enemy is defending
+                            if self.player_defence is True:
+                                self.enemy_damage = self.enemy_damage//2
+
+                            self.fighting_player.warrior_hp = self.fighting_player.warrior_hp - self.enemy_damage
+                            sleep(0.5)
+                            print(self.fighting_enemy.name + " deals " + str(self.enemy_damage) + " damage")
+                        self.combat = True
+
+                        self.fighting_enemy.enemy_maul_cd = 3
+                        if self.fighting_enemy.enemy_rend_cd != 0:
+                            self.fighting_enemy.enemy_rend_cd -= 1
+
+                        if self.fighting_player.warrior_hp <= 0:
+                            print("Player HP:" + " " + str(self.fighting_player.warrior_hp) + "/" + str(self.fighting_player.warrior_max_hp))
+                            print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.wolf_hp) + "/" + str(self.fighting_enemy.wolf_max_hp))
+                            print("Game Over")
+                            quit()
+                        elif self.fighting_player.warrior_hp <= 0 and self.fighting_enemy.wolf_hp <= 0:
+                            print("Player HP:" + " " + str(self.fighting_player.warrior_hp) + "/" + str(self.fighting_player.warrior_max_hp))
+                            print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.wolf_hp) + "/" + str(self.fighting_enemy.wolf_max_hp))
+                            print("Game Over")
+                            quit()
+                        elif self.fighting_enemy.wolf_hp <= 0:
+                            print("Player HP:" + " " + str(self.fighting_player.warrior_hp) + "/" + str(self.fighting_player.warrior_max_hp))
+                            print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.wolf_hp) + "/" + str(self.fighting_enemy.wolf_max_hp))
+                            print("You defeated the enemy" + " " + self.fighting_enemy.name)
+                            self.combat = False
+                            break
+                        print("End Turn")
+                        sleep(0.5)
+                        break
+                else:
+                    self.enemy_defence = True
                     self.combat = True
+
+                    if self.fighting_enemy.enemy_maul_cd != 0:
+                        self.fighting_enemy.enemy_maul_cd -= 1
+                    if self.fighting_enemy.enemy_rend_cd != 0:
+                        self.fighting_enemy.enemy_rend_cd -= 1
+
                     if self.fighting_player.warrior_hp <= 0:
                         print("Player HP:" + " " + str(self.fighting_player.warrior_hp) + "/" + str(self.fighting_player.warrior_max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.wolf_hp) + "/" + str(self.fighting_enemy.wolf_max_hp))
@@ -1018,26 +1125,7 @@ class wolf_fight:
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
                         break
+                    print("The " + self.fighting_enemy.name + " readies for your next attack.")
                     print("End Turn")
-
-            else:
-                self.enemy_defence = True
-                self.combat = True
-                if self.fighting_player.warrior_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.warrior_hp) + "/" + str(self.fighting_player.warrior_max_hp))
-                    print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.wolf_hp) + "/" + str(self.fighting_enemy.wolf_max_hp))
-                    print("Game Over")
-                    quit()
-                elif self.fighting_player.warrior_hp <= 0 and self.fighting_enemy.wolf_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.warrior_hp) + "/" + str(self.fighting_player.warrior_max_hp))
-                    print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.wolf_hp) + "/" + str(self.fighting_enemy.wolf_max_hp))
-                    print("Game Over")
-                    quit()
-                elif self.fighting_enemy.wolf_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.warrior_hp) + "/" + str(self.fighting_player.warrior_max_hp))
-                    print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.wolf_hp) + "/" + str(self.fighting_enemy.wolf_max_hp))
-                    print("You defeated the enemy" + " " + self.fighting_enemy.name)
-                    self.combat = False
+                    sleep(0.5)
                     break
-                print("Enemy Defends")
-                print("End Turn")

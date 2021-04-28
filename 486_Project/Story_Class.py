@@ -1,22 +1,34 @@
-from Characters_Class import *
-class story:
+# from Characters_Class import *
+class Story:
 
     def __init__(self):
         pass
 
-    def select_class(self):
-        player_class = ()
-        choice = input("Choose your class.")
+    # def select_class(self):
+    #     player_class = None
+    #     choice = input("Choose your class.")
+    #
+    #     if choice == "warrior":
+    #         player_class = Warrior()
+    #
+    #     # else:
+    #     #     print("nope")
+    #
+    #     return player_class
 
-        if choice == "warrior":
-            player_class = warrior()
-
-        # else:
-        #     print("nope")
-
-        return player_class
+        # thoughts
+        # the story is about nobody who becomes somebody; making a name for themself
+        # you've heard stories about a person being the chosen one, and even though you might not be that person you know something has to be done
+        # you weren't chosen by destiny but you are making it your destiny
 
     def intro(self):
+        # There are countless stories within this world, each with their own kind of ending whether it be good, bad, or somewhere in-between.
+        # Out of those there is a kind of story about a chosen one who was destined to save the world or right some kind of wrong.
+        # This however, isn't one of those stories. This story is yours. You're a nobody who decides to become a somebody and
+        # make a name for yourself. The path to becoming a brave hero where you begin your journey and become a part of a tale as old
+        # as time of good versus evil. In order to save this land you must overcome many trials and tribulations to
+        # have the chance to defeat the dragon that plagues us, corrupting the land and it's inhabitants.
+        #
         print("""Brave hero, you are about to begin your journey and become a part of a tale as old as time of good versus evil. 
 In order to save the land you must defeat the dragon that plagues us, corrupting the land and it's inhabitants.""")
 
@@ -50,4 +62,4 @@ $$$$$$$$\                    $$\            $$$$$$\        $$\                  
    $$ |$$   ____| $$  $$<    $$ |$$\       $$ |  $$ |$$ |  $$ |  \$$$  /  $$   ____|$$ |  $$ | $$ |$$\ $$ |  $$ |$$ |      $$   ____|
    $$ |\$$$$$$$\ $$  /\$$\   \$$$$  |      $$ |  $$ |\$$$$$$$ |   \$  /   \$$$$$$$\ $$ |  $$ | \$$$$  |\$$$$$$  |$$ |      \$$$$$$$\ 
    \__| \_______|\__/  \__|   \____/       \__|  \__| \_______|    \_/     \_______|\__|  \__|  \____/  \______/ \__|       \_______|
-        """)
+   """)
