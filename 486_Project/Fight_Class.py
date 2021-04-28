@@ -17,7 +17,6 @@ class warrior_fight:
         self.enemy_attack = 0
         self.enemy_damage = 0
 
-    # fix enemy skill logic for cooldowns
     def warrior_first_vs_bad_warrior(self):
         self.combat = True
 
@@ -207,19 +206,19 @@ class warrior_fight:
                         self.fighting_player.warrior_hp += 10
                         if self.fighting_player.warrior_hp > self.fighting_player.warrior_max_hp:
                             self.fighting_player.warrior_hp = self.fighting_player.warrior_max_hp
-                            self.fighting_player.player_items.remove('Small Health Potion')
+                        self.fighting_player.player_items.remove('Small Health Potion')
                     elif item_choice == "mhp" and "Medium Health Potion" in self.fighting_player.player_items:
                         # change to functions?
                         self.fighting_player.warrior_hp += 20
                         if self.fighting_player.warrior_hp > self.fighting_player.warrior_max_hp:
                             self.fighting_player.warrior_hp = self.fighting_player.warrior_max_hp
-                            self.fighting_player.player_items.remove('Medium Health Potion')
+                        self.fighting_player.player_items.remove('Medium Health Potion')
                     elif item_choice == "lhp" and "Large Health Potion" in self.fighting_player.player_items:
                         # change to functions?
                         self.fighting_player.warrior_hp += 30
                         if self.fighting_player.warrior_hp > self.fighting_player.warrior_max_hp:
                             self.fighting_player.warrior_hp = self.fighting_player.warrior_max_hp
-                            self.fighting_player.player_items.remove('Large Health Potion')
+                        self.fighting_player.player_items.remove('Large Health Potion')
                     elif item_choice == "back":
                         continue
                     else:
@@ -375,7 +374,6 @@ class warrior_fight:
                     print("End Turn")
                     break
 
-    # fix enemy skill logic for cooldowns
     def warrior_second_vs_bad_warrior(self):
         self.combat = True
 
@@ -706,7 +704,6 @@ class warrior_fight:
 
 class wolf_fight:
 
-    # change enemy init?
     def __init__(self, fighting_player=warrior(), fighting_enemy=wolf()):
         self.fighting_player = fighting_player
         self.fighting_enemy = fighting_enemy
