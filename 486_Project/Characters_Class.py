@@ -1,10 +1,16 @@
-class warrior:
+class Warrior:
     """
     warrior class for player
     """
     def __init__(self):
         # [strength, dexterity, intelligence, constitution]
-        self.stats = [7, 5, 5, 7]
+        self.base_stats = [7, 5, 5, 7]
+
+        # weapon
+        self.weapon = [1, 0, 0, 1, "Ole Trusty Sword"]
+
+        # total stats geekforgeeks.com
+        self.stats = [self.base_stats[i] + self.weapon[i] for i in range(len(self.base_stats))]
 
         # will be used to determine total armor
         self.warrior_head = 0
@@ -46,8 +52,12 @@ class warrior:
     def new_max_hp(self):
         self.warrior_max_hp = self.stats[3] * 4
 
+    # function for when player gets new weapon
+    def new_weapon(self):
+        pass
 
-class bad_warrior:
+
+class Bad_warrior:
     """
     class for enemy
     """
@@ -78,7 +88,7 @@ class bad_warrior:
         self.enemy_double_cd = 0
 
 
-class wolf:
+class Wolf:
     """
     class for enemy
     """

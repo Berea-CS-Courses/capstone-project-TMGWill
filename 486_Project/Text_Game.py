@@ -5,20 +5,38 @@ from Characters_Class import *
 from adventurelib import *
 
 
-story = story()
+def select_class():
+    while True:
+        choice = input("Choose your class.")
+
+        if choice == "warrior":
+            player_class = Warrior()
+            break
+
+        else:
+            print("nope")
+
+    return player_class
+
+
+story = Story()
+
 # story title
 story.title()
+
 # player
-# player = warrior()
-player = story.select_class()
+# player = Warrior()
+# player = story.select_class()
+player = select_class()
+
 
 # story intro
 story.intro()
 
 # enemies
-bw1 = bad_warrior()
-bw2 = bad_warrior()
-w1 = wolf()
+bw1 = Bad_warrior()
+bw2 = Bad_warrior()
+w1 = Wolf()
 
 # sets state for all rooms to be empty
 Room.state = None
@@ -51,10 +69,10 @@ room3.north = room4
 room2.west = room5
 
 # setting the combats for the rooms so they can be called
-room4.combat = wolf_fight(fighting_player=player, fighting_enemy=w1).warrior_first_vs_wolf
+room4.combat = Wolf_fight(fighting_player=player, fighting_enemy=w1).warrior_first_vs_wolf
 room5.combat = warrior_fight(fighting_player=player, fighting_enemy=bw2).warrior_second_vs_bad_warrior
 
-current_room = room1
+current_room = room2
 print("Exit(s):" + " " + str(current_room.exits()))
 print(current_room)
 
@@ -69,19 +87,16 @@ print(current_room)
 @when('w', direction='west')
 def go(direction):
     global current_room
-    # room = current_room.exit(direction)
-    # if room:
-    #     current_room = room
     # the lines with "if direction..." to "else: print..." were based on code from Youtuber LukeRS
     if direction in current_room.exits():
         current_room = current_room.exit(direction)
-        # print(current_room)
     else:
         print("You can't go that way.")
 
     # check and handles room states
     if current_room.state == "combat":
         print(current_room)
+        sleep(1)
         current_room.combat()
         print(current_room.exits())
         print("Only the remains of battle are left behind")
@@ -104,7 +119,7 @@ def yes():
         print("In a manic fit, the person turns on you and attacks!")
         warrior_fight(fighting_player=player, fighting_enemy=bw1).warrior_first_vs_bad_warrior()
         current_room.description = """
-You killed that guy
+The remains of the insane are all that's left.
         """
         room2.description = """
 This open area leaves you alone with your thoughts after that fight (Extra Yikes).
@@ -127,6 +142,7 @@ This open area leaves you alone with your thoughts after that person left (Feels
         print("Exit(s):" + " " + str(current_room.exits()))
         print(current_room)
         current_room.state = "empty"
+
 
 # adventurelib function that runs the game
 start()
