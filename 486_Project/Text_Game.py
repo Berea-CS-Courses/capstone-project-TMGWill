@@ -68,6 +68,7 @@ room6 = Room("""
 mean dog first
 """)
 
+# creating rooms and their descriptions
 Beginning_Room = Room("""
 A journey of a thousand miles begins with a single step.
 """)
