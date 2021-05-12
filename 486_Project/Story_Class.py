@@ -16,11 +16,6 @@ class Story:
     #
     #     return player_class
 
-        # thoughts
-        # the story is about nobody who becomes somebody; making a name for themself
-        # you've heard stories about a person being the chosen one, and even though you might not be that person you know something has to be done
-        # you weren't chosen by destiny but you are making it your destiny
-
     def intro(self):
         # There are countless stories within this world, each with their own kind of ending whether it be good, bad, or somewhere in-between.
         # Out of those there is a kind of story about a chosen one who was destined to save the world or right some kind of wrong.
@@ -31,6 +26,13 @@ class Story:
         #
         print("""Brave hero, you are about to begin your journey and become a part of a tale as old as time of good versus evil. 
 In order to save the land you must defeat the dragon that plagues us, corrupting the land and it's inhabitants.""")
+
+    def epilogue(self):
+        pass
+
+    # idea was to use this for the Dragon_Intro room but might not be used
+    def final_dialogue(self):
+        pass
 
     def title(self):
         print("""
