@@ -26,6 +26,7 @@ class Story:
     def title(self):
         # Lackluster
         # the journey of nobody to somebody
+        # editing the title
         print("""
 $$\                           $$\       $$\                       $$\                         
 $$ |                          $$ |      $$ |                      $$ |                        
