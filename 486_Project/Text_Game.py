@@ -228,7 +228,6 @@ def investigate():
         print(current_room)
         current_room.state = "empty"
 
+
 # adventurelib function that runs the game
 start()
-
-# FIX FIGHTS FOR ENEMIES REMOVE BREAKS
