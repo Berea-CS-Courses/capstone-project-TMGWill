@@ -24,10 +24,8 @@ def select_class():
     return player_class
 
 
-story = Story()
-
 # story title
-story.title()
+Story().title()
 
 # player
 # player = Warrior()
@@ -36,118 +34,112 @@ player = select_class()
 
 
 # story intro
-story.intro()
+Story().intro()
 # sleep(5)
 
-# enemies
-bw1 = Corrupted_swordsman()
-bw2 = Corrupted_swordsman()
-w1 = Wolf()
-w2 = Wolf()
-
-# sets state for all rooms to be empty
+# sets state for all rooms to be None
 Room.state = None
-
-# creating rooms and their descriptions
-room1 = Room("""
-A journey of a thousand miles begins with a single step.
-""")
-room2 = Room("""
-This open area leaves you alone with your thoughts (Yikes).
-""")
-room3 = Room("""
-You see a figure standing a distance away. Do you approach them? (yes/no)
-""")
-room4 = Room("""
-A savage beast notices your presence and attacks!
-""")
-room5 = Room("""
-mean guy first
-""")
-room6 = Room("""
-mean dog first
-""")
 
 # creating rooms and their descriptions
 Beginning_Room = Room("""
 A journey of a thousand miles begins with a single step.
 """)
 Animal_Starting_Room = Room("""
-A journey of a thousand miles begins with a single step.
+As you begin your journey you notice a sinister presence around you. You see before you dangerous wildlife that appear bloodthirstier than normal.
 """)
 Wolf_Encounter = Room("""
-A journey of a thousand miles begins with a single step.
+This savage beast notices your presence and attacks!
 """)
 Nest_Event = Room("""
-A journey of a thousand miles begins with a single step.
+You hear the call of a bird and see a shiny nest. Do you satisfy your curiosity or walk away? [investigate/ignore]
 """)
 Giant_Eagle_Encounter = Room("""
-A journey of a thousand miles begins with a single step.
+You hear it before you see as a Giant Eagle swoops down to attack you.
 """)
 Dead_Man_Event = Room("""
-A journey of a thousand miles begins with a single step.
+You see the remains of someone who wasn't so lucky. There might be something good but would it be worth it? [rummage/respect]
 """)
 Giant_Lizard_Encounter = Room("""
-A journey of a thousand miles begins with a single step.
+This large scaled beast turns to approach and attacks!
 """)
 Human_Starting_Room = Room("""
-A journey of a thousand miles begins with a single step.
+The sinister feeling and presence of corruption grows more noticeable. You notice before you people that have been corrupted by the dragon's influence.
 """)
 Corrupted_Swordsman_Encounter = Room("""
-A journey of a thousand miles begins with a single step.
+The corrupted fighter swayed by the dragon attacks without a second thought.
 """)
-Corrupted_Swordsman_Encounter_2 = Room("""
-A journey of a thousand miles begins with a single step.
+Corrupted_Knight_Encounter = Room("""
+This armored warrior tainted by the dragon's influence attacks with no hesitation.
 """)
 Corrupted_Acolyte_Encounter = Room("""
-A journey of a thousand miles begins with a single step.
+A magic user corrupted by the dragon's influence prepares to attack.
 """)
 Convenient_Event = Room("""
-A journey of a thousand miles begins with a single step.
+A campfire is still lit but your eyes are drawn to the armor lying there. No one's there but they could come back any moment. [advance/retreat]
 """)
 New_Weapon_Event = Room("""
-A journey of a thousand miles begins with a single step.
+You see a Corrupted Swordsman who appears stronger than the others. You wonder if you should confront from or withdraw till they leave. [confront/withdraw]
 """)
+# close to suffocating?
 Monster_Starting_Room = Room("""
-A journey of a thousand miles begins with a single step.
+The feeling of corruption is strong and before you are creatures inhumane in nature.
 """)
 Bugbear_Encounter = Room("""
-A journey of a thousand miles begins with a single step.
+A powerfully built creature matching your height rushes forward to attack.
 """)
 Goblin_Encounter = Room("""
-A journey of a thousand miles begins with a single step.
+Out of the corner of your eye you notice some creature lurking. As it realizes that you noticed, it springs forward to attack.
 """)
+# with your back to it attacks
 Sleeping_Event = Room("""
-A journey of a thousand miles begins with a single step.
+You see what seems like a Bugbear sleeping not too far away. You could take your chances to sneak around and see if you can find anything or walk away and not risk it. [sneak/leave]
 """)
 Big_Event = Room("""
-A journey of a thousand miles begins with a single step.
+You see before you a creature of monstrous size and strength. This monster before you is an ogre which almost guarantees death but would be a worthy feat to slay such a creature.
 """)
+# is this a sign or some kind of warning; before you can continue to think
 Death_Dog_Encounter = Room("""
-A journey of a thousand miles begins with a single step.
+Two heads are better than one, and twice as dangerous. This monster is a Death Dog and you consider if this is some kind of sign or warning for the battle ahead. Before you can continue to think it attacks like a creature from Hell.
 """)
-Dragon_Intro = Room("""
-A journey of a thousand miles begins with a single step.
-""")
+Dragon_Intro = Room(Story().final_dialogue())
 Dragon_Encounter = Room("""
-A journey of a thousand miles begins with a single step.
+It feels like what stands before you is some kind of incarnation of death and destruction itself.
 """)
 # setting room states for specific rooms
-room3.state = "event"
-room4.state = "combat"
-room5.state = "combat"
-room6.state = "combat"
+Wolf_Encounter.state = "combat"
+Nest_Event.state = "event"
+Giant_Eagle_Encounter.state = "combat"
+Dead_Man_Event.state = "event"
+Giant_Lizard_Encounter.state = "combat"
+Corrupted_Swordsman_Encounter.state = "combat"
+Corrupted_Knight_Encounter.state = "combat"
+Corrupted_Acolyte_Encounter.state = "combat"
+Convenient_Event.state = "event"
+New_Weapon_Event.state = "event"
+Goblin_Encounter.state = "combat"
+Sleeping_Event.state = "event"
+Big_Event.state = "event"
+Death_Dog_Encounter.state = "combat"
+Dragon_Encounter.state = "combat"
 
 # enemies
-room4.enemy = Wolf()
+Wolf_Encounter.enemy = Wolf()
+Nest_Event.enemy = Giant_eagle()
+Giant_Eagle_Encounter.enemy = Giant_eagle()
+Giant_Lizard_Encounter.enemy = Giant_lizard()
+Corrupted_Swordsman_Encounter.enemy = Corrupted_swordsman()
+Corrupted_Knight_Encounter.enemy = Corrupted_knight()
+Corrupted_Acolyte_Encounter.enemy = Corrupted_acolyte()
+Convenient_Event.enemy = Corrupted_knight()
+New_Weapon_Event.enemy = Corrupted_swordsman()
+Bugbear_Encounter.enemy = Bugbear()
+Goblin_Encounter.enemy = Goblin()
+Sleeping_Event.enemy = Bugbear()
+Big_Event.enemy = Ogre()
+Death_Dog_Encounter.enemy = Death_dog()
+Dragon_Encounter.enemy = Dragon()
 
 # creating exits/paths for rooms
-room1.north = room2
-room2.north = room3
-room3.north = room4
-room2.west = room5
-room2.east = room6
-
 Beginning_Room.north = Animal_Starting_Room
 Animal_Starting_Room.north = Wolf_Encounter
 Wolf_Encounter.west = Nest_Event
@@ -157,9 +149,9 @@ Dead_Man_Event.west = Giant_Eagle_Encounter
 Dead_Man_Event.east = Giant_Lizard_Encounter
 Giant_Lizard_Encounter.north = Human_Starting_Room
 Human_Starting_Room.west = Corrupted_Swordsman_Encounter
-Corrupted_Swordsman_Encounter.north = Corrupted_Swordsman_Encounter_2
-Corrupted_Swordsman_Encounter_2.west = Corrupted_Acolyte_Encounter
-Corrupted_Swordsman_Encounter_2.north = New_Weapon_Event
+Corrupted_Swordsman_Encounter.north = Corrupted_Knight_Encounter
+Corrupted_Knight_Encounter.west = Corrupted_Acolyte_Encounter
+Corrupted_Knight_Encounter.north = New_Weapon_Event
 Corrupted_Acolyte_Encounter.west = Convenient_Event
 New_Weapon_Event.east = Monster_Starting_Room
 Monster_Starting_Room.north = Bugbear_Encounter
@@ -171,11 +163,19 @@ Death_Dog_Encounter.north = Dragon_Intro
 Dragon_Intro.north = Dragon_Encounter
 
 # setting the combats for the rooms so they can be called
-room4.combat = Warrior_vs_wolf_fight(fighting_player=player, fighting_enemy=room4.enemy).warrior_first_vs_wolf
-room5.combat = Warrior_vs_bad_warrior_fight(fighting_player=player, fighting_enemy=bw2).warrior_second_vs_bad_warrior
-room6.combat = Warrior_vs_wolf_fight(fighting_player=player, fighting_enemy=w2).warrior_second_vs_wolf
+Wolf_Encounter.combat = Warrior_vs_wolf_fight(fighting_player=player, fighting_enemy=Wolf_Encounter.enemy).decide_warrior_vs_wolf_fight
+Giant_Eagle_Encounter.combat = Warrior_vs_giant_eagle_fight(fighting_player=player, fighting_enemy=Giant_Eagle_Encounter.enemy).decide_warrior_vs_giant_eagle
+Giant_Lizard_Encounter.combat = Warrior_vs_giant_lizard_fight(fighting_player=player, fighting_enemy=Giant_Lizard_Encounter.enemy).decide_warrior_vs_giant_lizard
+Corrupted_Swordsman_Encounter.combat = Warrior_vs_corrupted_swordsman_fight(fighting_player=player, fighting_enemy=Corrupted_Swordsman_Encounter.enemy).decide_warrior_vs_corrupted_swordsman
+Corrupted_Knight_Encounter.combat = Warrior_vs_corrupted_knight_fight(fighting_player=player, fighting_enemy=Corrupted_Knight_Encounter.enemy).decide_warrior_vs_corrupted_knight
+Corrupted_Acolyte_Encounter.combat = Warrior_vs_corrupted_acolyte_fight(fighting_player=player, fighting_enemy=Corrupted_Acolyte_Encounter.enemy).decide_warrior_vs_corrupted_acolyte
+Bugbear_Encounter.combat = Warrior_vs_bugbear(fighting_player=player, fighting_enemy=Bugbear_Encounter.enemy).decide_warrior_vs_bugbear
+Goblin_Encounter.combat = Warrior_vs_goblin(fighting_player=player, fighting_enemy=Goblin_Encounter.enemy).decide_warrior_vs_goblin
+Death_Dog_Encounter.combat = Warrior_vs_death_dog(fighting_player=player, fighting_enemy=Death_Dog_Encounter.enemy).decide_warrior_vs_death_dog
+Dragon_Encounter.combat = Warrior_vs_dragon(fighting_player=player, fighting_enemy=Dragon_Encounter.enemy).decide_warrior_vs_dragon
 
-current_room = room1
+# beginning of code for game
+current_room = Beginning_Room
 print("Exit(s):" + " " + str(current_room.exits()))
 print(current_room)
 
@@ -202,8 +202,8 @@ def go(direction):
         sleep(1)
         current_room.combat()
         print(current_room.exits())
-        print("Only the remains of battle are left behind")
-        current_room.description = "Only the remains of battle were left behind"
+        print("Only the remains of battle are left behind.")
+        current_room.description = "Only the remains of battle were left behind."
         current_room.state = "empty"
 
     elif current_room.state == "event":
@@ -212,40 +212,23 @@ def go(direction):
     else:
         print("Exit(s):" + " " + str(current_room.exits()))
         print(current_room)
-
-
-# room3 possible event outcome
-@when('yes')
-def yes():
-    if current_room is room3 and current_room.state == "event":
-        # current_room.combat = True
-        print("In a manic fit, the person turns on you and attacks!")
-        Warrior_vs_bad_warrior_fight(fighting_player=player, fighting_enemy=bw1).warrior_first_vs_bad_warrior()
-        current_room.description = """
-The remains of the insane are all that's left.
-        """
-        room2.description = """
-This open area leaves you alone with your thoughts after that fight (Extra Yikes).
-        """
-        print("Exit(s):" + " " + str(current_room.exits()))
-        print(current_room)
         current_room.state = "empty"
 
 
-# room3 possible event outcome
-@when('no')
-def no():
-    if current_room is room3 and current_room.state == "event":
-        current_room.description = """
-That person left and you feel awkward.
-        """
-        room2.description = """
-This open area leaves you alone with your thoughts after that person left (Feels Weird Man).
-        """
+# possible Nest_Event outcome
+@when('investigate')
+def investigate():
+    if current_room is Nest_Event and current_room.state == "event":
+        print("This bird of prey attacks the intruder messing with their home.")
+        Warrior_vs_giant_eagle_fight(fighting_player=player, fighting_enemy=Nest_Event.enemy).decide_warrior_vs_giant_eagle()
+        print("After dealing with that bird and rifling through the nesting, you see that the shiny nesting were some decent gauntlets")
+        player.hands = 4
+        current_room.description = "Only the remains of battle and a broken nest are left behind."
         print("Exit(s):" + " " + str(current_room.exits()))
         print(current_room)
         current_room.state = "empty"
-
 
 # adventurelib function that runs the game
 start()
+
+# FIX FIGHTS FOR ENEMIES REMOVE BREAKS

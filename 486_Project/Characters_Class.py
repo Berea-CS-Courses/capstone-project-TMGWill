@@ -6,6 +6,7 @@ class Warrior:
     """
     def __init__(self):
         # [strength, dexterity, intelligence, constitution]
+        # [6, 4, 4, 6] original
         self.base_stats = [6, 4, 4, 6]
 
         # weapon
@@ -16,7 +17,7 @@ class Warrior:
 
         # will be used to determine total armor
         self.head = 0
-        self.chest = 1
+        self.chest = 2
         self.hands = 1
         self.legs = 1
 
@@ -41,6 +42,7 @@ class Warrior:
         [2]Double Swing
         '''
         # counter
+        # lunge surge forawd to run them through
 
         # player skill cooldowns
         self.big_cdt = 4
@@ -316,8 +318,6 @@ class Bugbear:
         self.enemy_charge_cd = 0
 
 
-# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 class Goblin:
     """
     class for enemy
@@ -349,35 +349,35 @@ class Goblin:
         self.enemy_knee_cd = 0
 
 
-# class Death_dog:
-#     """
-#     class for enemy
-#     """
-#     def __init__(self):
-#         # the name for the enemy character
-#         self.name = "Death Dog"
-#
-#         # [strength, dexterity, intelligence, constitution]
-#         self.stats = [7, 10, 5, 8]
-#
-#         # armor for this enemy
-#         self.enemy_armor = 2
-#
-#         # health points
-#         self.enemy_max_hp = self.stats[3] * 4
-#         self.enemy_hp = self.enemy_max_hp
-#
-#         # enemy menu for choices during combat
-#         self.enemy_menu = ["attack", "defend", "skills"]
-#
-#         # enemy skills to use during combat
-#         self.enemy_skills = ["death maul", "death rend"]
-#
-#         # enemy skill cooldowns
-#         self.enemy_dmaul_cdt = 4
-#         self.enemy_dmaul_cd = 0
-#         self.enemy_drend_cdt = 3
-#         self.enemy_drend_cd = 0
+class Death_dog:
+    """
+    class for enemy
+    """
+    def __init__(self):
+        # the name for the enemy character
+        self.name = "Death Dog"
+
+        # [strength, dexterity, intelligence, constitution]
+        self.stats = [7, 10, 5, 8]
+
+        # armor for this enemy
+        self.enemy_armor = 2
+
+        # health points
+        self.enemy_max_hp = self.stats[3] * 4
+        self.enemy_hp = self.enemy_max_hp
+
+        # enemy menu for choices during combat
+        self.enemy_menu = ["attack", "defend", "skills"]
+
+        # enemy skills to use during combat
+        self.enemy_skills = ["death maul", "death rend"]
+
+        # enemy skill cooldowns
+        self.enemy_dmaul_cdt = 4
+        self.enemy_dmaul_cd = 0
+        self.enemy_drend_cdt = 3
+        self.enemy_drend_cd = 0
 
 
 class Dragon:
