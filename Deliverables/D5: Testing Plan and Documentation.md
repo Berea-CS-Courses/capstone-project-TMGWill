@@ -16,6 +16,6 @@
 * Combat on Start
   * For my combat rooms I wanted the player to be thrown into a fight after the room description is printed. In an earlier stage of my project the function call for the combat was happening as soon as my code was ran which was not how I intended for it to work. To fix this, I used the room attributes to have the combat be tied to the room and only have it called when the player enters the room that it's tied to. I also had to make sure that the fight would not happen again if the player left the room and went back into it, so like the event room I had to set the current room's state to "empty" to prevent that from happening. 
 * Turns
-  * word
+  * For my game the player, as well as the enemy, get to do one action per turn which could be to attack, defend, use a skill and only the player would have the option to use  an item. I needed to keep it continous until either the player or enemy had less than or equal to zero health points (hp).
 # Ad Hoc Testing
 * word
