@@ -14,5 +14,8 @@
   * One bug that is currently in my game is that when first encountering an event room, the player can skip doing the event if they know what the exit(s) are for the current room. The intent of the event rooms is that the player would make a choice and receive a consequence of some kind based on what they chose and that they would be unable to undo or do the event over again. As long as the player knows the exits for the current room then they can skip or avoid doing the event rooms even if they leave the room and go back into it.
 ## Combat
 * Combat on Start
+  * For my combat rooms I wanted the player to be thrown into a fight after the room description is printed. In an earlier stage of my project the function call for the combat was happening as soon as my code was ran which was not how I intended for it to work. To fix this, I used the room attributes to have the combat be tied to the room and only have it called when the player enters the room that it's tied to. I also had to make sure that the fight would not happen again if the player left the room and went back into it, so like the event room I had to set the current room's state to "empty" to prevent that from happening. 
+* Turns
+  * word
 # Ad Hoc Testing
 * word
