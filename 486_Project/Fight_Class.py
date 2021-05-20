@@ -28,14 +28,13 @@ class Warrior_vs_wolf_fight:
 
     def warrior_first_vs_wolf(self):
         self.combat = True
-        print("first")
         while self.combat:
             self.player_defence = False
             self.enemy_defence = False
             sleep(0.35)
             attack_mod = random.uniform(1.2, 1.6)
 
-            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
 
             print(self.fighting_player.player_menu)
@@ -60,17 +59,17 @@ class Warrior_vs_wolf_fight:
                     self.fighting_player.double_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -91,17 +90,17 @@ class Warrior_vs_wolf_fight:
                     self.fighting_player.double_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -115,7 +114,7 @@ class Warrior_vs_wolf_fight:
                 skill_choice = str.lower(input())
                 if skill_choice == "big swing":
                     if self.fighting_player.big_cd != 0:
-                        print("nope")
+                        print("Skill on cooldown.")
                         continue
                     big_attack_mod = random.uniform(2.1, 2.5)
                     self.attack = round(self.fighting_player.stats[0] * big_attack_mod)
@@ -135,17 +134,17 @@ class Warrior_vs_wolf_fight:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -158,7 +157,7 @@ class Warrior_vs_wolf_fight:
 
                 elif skill_choice == "double swing":
                     if self.fighting_player.double_cd != 0:
-                        print("nope")
+                        print("Skill on cooldown.")
                         continue
                     print("Using " + self.fighting_player.weapon[4] + " you strike twice in one fell swoop.")
                     for i in range(2):
@@ -180,17 +179,17 @@ class Warrior_vs_wolf_fight:
                         self.fighting_player.big_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -218,13 +217,15 @@ class Warrior_vs_wolf_fight:
                     # while self.combat:
                     print(self.fighting_player.player_items)
                     item_choice = str.lower(input())
-                    if item_choice == "shp":
-                        # change to functions
-                        self.fighting_player.hp += 10
-                        if self.fighting_player.hp > self.fighting_player.max_hp:
-                            self.fighting_player.hp = self.fighting_player.max_hp
+                    if item_choice == "small health potion" and "Small Health Potion" in self.fighting_player.player_items:
+                            # change to functions?
+                            self.fighting_player.hp += 10
+                            if self.fighting_player.hp > self.fighting_player.max_hp:
+                                self.fighting_player.hp = self.fighting_player.max_hp
                             self.fighting_player.player_items.remove('Small Health Potion')
-                    elif item_choice == "mhp" and "Medium Health Potion" in self.fighting_player.player_items:
+                            print("Your wounds begin to heal.")
+                            sleep(0.5)
+                    elif item_choice == "medium health potion" and "Medium Health Potion" in self.fighting_player.player_items:
                         # change to functions?
                         self.fighting_player.hp += 20
                         if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -232,7 +233,7 @@ class Warrior_vs_wolf_fight:
                         self.fighting_player.player_items.remove('Medium Health Potion')
                         print("Your wounds begin to heal.")
                         sleep(0.5)
-                    elif item_choice == "lhp" and "Large Health Potion" in self.fighting_player.player_items:
+                    elif item_choice == "large health potion" and "Large Health Potion" in self.fighting_player.player_items:
                         # change to functions?
                         self.fighting_player.hp += 30
                         if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -256,7 +257,7 @@ class Warrior_vs_wolf_fight:
 
                 if enemy_action == "attack":
                     enemy_attack_mod = random.uniform(1.2, 1.6)
-                    self.enemy_attack = round(self.fighting_enemy.stats[0] * enemy_attack_mod)
+                    self.enemy_attack = round(self.fighting_enemy.stats[1] * enemy_attack_mod)
                     self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
                     if self.player_defence is True:
@@ -274,17 +275,17 @@ class Warrior_vs_wolf_fight:
                         self.fighting_enemy.enemy_rend_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -297,9 +298,8 @@ class Warrior_vs_wolf_fight:
                     enemy_skill = random.choice(self.fighting_enemy.enemy_skills)
                     if enemy_skill == "rend":
                         if self.fighting_enemy.enemy_rend_cd != 0:
-                            print("enemy rend nope")
                             continue
-                        rend_attack_mod = random.uniform(1.6, 1.8)
+                        rend_attack_mod = random.uniform(1.4, 1.6)
                         self.enemy_attack = round(self.fighting_enemy.stats[1] * rend_attack_mod)
                         self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
@@ -317,17 +317,17 @@ class Warrior_vs_wolf_fight:
                             self.fighting_enemy.enemy_maul_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -337,11 +337,10 @@ class Warrior_vs_wolf_fight:
                         break
                     elif enemy_skill == "maul":
                         if self.fighting_enemy.enemy_maul_cd != 0:
-                            print("enemy maul nope")
                             continue
                         print("The " + self.fighting_enemy.name + " bites you with a savage grip.")
                         for i in range(3):
-                            maul_attack_mod = random.uniform(1.2, 1.3)
+                            maul_attack_mod = random.uniform(1.2, 1.4)
                             self.enemy_attack = round(self.fighting_enemy.stats[1] * maul_attack_mod)
                             self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
@@ -359,17 +358,17 @@ class Warrior_vs_wolf_fight:
                             self.fighting_enemy.enemy_rend_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -387,17 +386,17 @@ class Warrior_vs_wolf_fight:
                         self.fighting_enemy.enemy_rend_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -409,7 +408,6 @@ class Warrior_vs_wolf_fight:
 
     def warrior_second_vs_wolf(self):
         self.combat = True
-        print("second")
         while self.combat:
             self.player_defence = False
             self.enemy_defence = False
@@ -436,17 +434,17 @@ class Warrior_vs_wolf_fight:
                     self.fighting_enemy.enemy_rend_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -458,9 +456,8 @@ class Warrior_vs_wolf_fight:
                 enemy_skill = random.choice(self.fighting_enemy.enemy_skills)
                 if enemy_skill == "rend":
                     if self.fighting_enemy.enemy_rend_cd != 0:
-                        print("enemy rend nope")
                         continue
-                    rend_attack_mod = random.uniform(1.6, 1.8)
+                    rend_attack_mod = random.uniform(1.4, 1.6)
                     self.enemy_attack = round(self.fighting_enemy.stats[1] * rend_attack_mod)
                     self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
@@ -478,17 +475,17 @@ class Warrior_vs_wolf_fight:
                         self.fighting_enemy.enemy_maul_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -497,12 +494,11 @@ class Warrior_vs_wolf_fight:
                     sleep(0.5)
                 elif enemy_skill == "maul":
                     if self.fighting_enemy.enemy_maul_cd != 0:
-                        print("enemy maul nope")
                         continue
                     print("The " + self.fighting_enemy.name + " bites you with a savage grip.")
                     for i in range(3):
-                        maul_attack_mod = random.uniform(1.3, 1.8)
-                        self.enemy_attack = round(self.fighting_enemy.stats[0] * maul_attack_mod)
+                        maul_attack_mod = random.uniform(1.2, 1.4)
+                        self.enemy_attack = round(self.fighting_enemy.stats[1] * maul_attack_mod)
                         self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
                         # checks if enemy is defending
@@ -519,17 +515,17 @@ class Warrior_vs_wolf_fight:
                         self.fighting_enemy.enemy_rend_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -546,17 +542,17 @@ class Warrior_vs_wolf_fight:
                     self.fighting_enemy.enemy_rend_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -570,7 +566,7 @@ class Warrior_vs_wolf_fight:
                 sleep(0.35)
                 attack_mod = random.uniform(1.2, 1.6)
 
-                print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                 print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
 
                 print(self.fighting_player.player_menu)
@@ -595,17 +591,17 @@ class Warrior_vs_wolf_fight:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -626,17 +622,17 @@ class Warrior_vs_wolf_fight:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -650,7 +646,7 @@ class Warrior_vs_wolf_fight:
                     skill_choice = str.lower(input())
                     if skill_choice == "big swing":
                         if self.fighting_player.big_cd != 0:
-                            print("nope")
+                            print("Skill on cooldown.")
                             continue
                         big_attack_mod = random.uniform(2.1, 2.5)
                         self.attack = round(self.fighting_player.stats[0] * big_attack_mod)
@@ -670,17 +666,17 @@ class Warrior_vs_wolf_fight:
                             self.fighting_player.double_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -694,7 +690,7 @@ class Warrior_vs_wolf_fight:
 
                     elif skill_choice == "double swing":
                         if self.fighting_player.double_cd != 0:
-                            print("nope")
+                            print("Skill on cooldown.")
                             continue
                         print("Using " + self.fighting_player.weapon[4] + " you strike twice in one fell swoop.")
                         for i in range(2):
@@ -716,17 +712,17 @@ class Warrior_vs_wolf_fight:
                             self.fighting_player.big_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -752,7 +748,7 @@ class Warrior_vs_wolf_fight:
                     else:
                         print(self.fighting_player.player_items)
                         item_choice = str.lower(input())
-                        if item_choice == "shp" and "Small Health Potion" in self.fighting_player.player_items:
+                        if item_choice == "small health potion" and "Small Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 10
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -760,7 +756,7 @@ class Warrior_vs_wolf_fight:
                             self.fighting_player.player_items.remove('Small Health Potion')
                             print("Your wounds begin to heal.")
                             sleep(0.5)
-                        elif item_choice == "mhp" and "Medium Health Potion" in self.fighting_player.player_items:
+                        elif item_choice == "medium health potion" and "Medium Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 20
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -768,7 +764,7 @@ class Warrior_vs_wolf_fight:
                             self.fighting_player.player_items.remove('Medium Health Potion')
                             print("Your wounds begin to heal.")
                             sleep(0.5)
-                        elif item_choice == "lhp" and "Large Health Potion" in self.fighting_player.player_items:
+                        elif item_choice == "large health potion" and "Large Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 30
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -830,7 +826,7 @@ class Warrior_vs_giant_lizard_fight:
             sleep(0.35)
             attack_mod = random.uniform(1.2, 1.6)
 
-            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
 
             print(self.fighting_player.player_menu)
@@ -855,17 +851,17 @@ class Warrior_vs_giant_lizard_fight:
                     self.fighting_player.double_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -886,17 +882,17 @@ class Warrior_vs_giant_lizard_fight:
                     self.fighting_player.double_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -910,7 +906,7 @@ class Warrior_vs_giant_lizard_fight:
                 skill_choice = str.lower(input())
                 if skill_choice == "big swing":
                     if self.fighting_player.big_cd != 0:
-                        print("nope")
+                        print("Skill on cooldown.")
                         continue
                     big_attack_mod = random.uniform(2.1, 2.5)
                     self.attack = round(self.fighting_player.stats[0] * big_attack_mod)
@@ -930,17 +926,17 @@ class Warrior_vs_giant_lizard_fight:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -953,7 +949,7 @@ class Warrior_vs_giant_lizard_fight:
 
                 elif skill_choice == "double swing":
                     if self.fighting_player.double_cd != 0:
-                        print("nope")
+                        print("Skill on cooldown.")
                         continue
                     print("Using " + self.fighting_player.weapon[4] + " you strike twice in one fell swoop.")
                     for i in range(2):
@@ -975,17 +971,17 @@ class Warrior_vs_giant_lizard_fight:
                         self.fighting_player.big_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -1013,13 +1009,15 @@ class Warrior_vs_giant_lizard_fight:
                     # while self.combat:
                     print(self.fighting_player.player_items)
                     item_choice = str.lower(input())
-                    if item_choice == "shp":
-                        # change to functions
-                        self.fighting_player.hp += 10
-                        if self.fighting_player.hp > self.fighting_player.max_hp:
-                            self.fighting_player.hp = self.fighting_player.max_hp
+                    if item_choice == "small health potion" and "Small Health Potion" in self.fighting_player.player_items:
+                            # change to functions?
+                            self.fighting_player.hp += 10
+                            if self.fighting_player.hp > self.fighting_player.max_hp:
+                                self.fighting_player.hp = self.fighting_player.max_hp
                             self.fighting_player.player_items.remove('Small Health Potion')
-                    elif item_choice == "mhp" and "Medium Health Potion" in self.fighting_player.player_items:
+                            print("Your wounds begin to heal.")
+                            sleep(0.5)
+                    elif item_choice == "medium health potion" and "Medium Health Potion" in self.fighting_player.player_items:
                         # change to functions?
                         self.fighting_player.hp += 20
                         if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -1027,7 +1025,7 @@ class Warrior_vs_giant_lizard_fight:
                         self.fighting_player.player_items.remove('Medium Health Potion')
                         print("Your wounds begin to heal.")
                         sleep(0.5)
-                    elif item_choice == "lhp" and "Large Health Potion" in self.fighting_player.player_items:
+                    elif item_choice == "large health potion" and "Large Health Potion" in self.fighting_player.player_items:
                         # change to functions?
                         self.fighting_player.hp += 30
                         if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -1051,7 +1049,7 @@ class Warrior_vs_giant_lizard_fight:
 
                 if enemy_action == "attack":
                     enemy_attack_mod = random.uniform(1.2, 1.6)
-                    self.enemy_attack = round(self.fighting_enemy.stats[0] * enemy_attack_mod)
+                    self.enemy_attack = round(self.fighting_enemy.stats[1] * enemy_attack_mod)
                     self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
                     if self.player_defence is True:
@@ -1069,17 +1067,17 @@ class Warrior_vs_giant_lizard_fight:
                         self.fighting_enemy.enemy_ram_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -1111,17 +1109,17 @@ class Warrior_vs_giant_lizard_fight:
                             self.fighting_enemy.enemy_ram_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -1134,7 +1132,7 @@ class Warrior_vs_giant_lizard_fight:
                             continue
                         print("The " + self.fighting_enemy.name + " bites you with a savage grip.")
                         ram_attack_mod = random.uniform(1.2, 1.3)
-                        self.enemy_attack = round(self.fighting_enemy.stats[0] * ram_attack_mod)
+                        self.enemy_attack = round(self.fighting_enemy.stats[1] * ram_attack_mod)
                         self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
                         # checks if enemy is defending
@@ -1152,17 +1150,17 @@ class Warrior_vs_giant_lizard_fight:
                             self.fighting_enemy.enemy_tail_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -1180,17 +1178,17 @@ class Warrior_vs_giant_lizard_fight:
                         self.fighting_enemy.enemy_ram_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -1211,7 +1209,7 @@ class Warrior_vs_giant_lizard_fight:
 
             if enemy_action == "attack":
                 enemy_attack_mod = random.uniform(1.2, 1.6)
-                self.enemy_attack = round(self.fighting_enemy.stats[0] * enemy_attack_mod)
+                self.enemy_attack = round(self.fighting_enemy.stats[1] * enemy_attack_mod)
                 self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
                 if self.player_defence is True:
@@ -1229,24 +1227,23 @@ class Warrior_vs_giant_lizard_fight:
                     self.fighting_enemy.enemy_ram_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
                     break
                 print("End Turn")
                 sleep(0.5)
-                break
 
             elif enemy_action == "skills":
                 enemy_skill = random.choice(self.fighting_enemy.enemy_skills)
@@ -1261,7 +1258,7 @@ class Warrior_vs_giant_lizard_fight:
                         self.enemy_damage = self.enemy_damage//2
 
                     self.fighting_player.hp = self.fighting_player.hp - self.enemy_damage
-                    print("The " + self.fighting_enemy.name + " whips you with their might tail and deals ", end="")
+                    print("The " + self.fighting_enemy.name + " whips you with their mighty tail and deals ", end="")
                     sleep(0.5)
                     print(str(self.enemy_damage) + " damage")
                     self.combat = True
@@ -1271,30 +1268,29 @@ class Warrior_vs_giant_lizard_fight:
                         self.fighting_enemy.enemy_ram_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
                         break
                     print("End Turn")
                     sleep(0.5)
-                    break
+
                 elif enemy_skill == "ram":
                     if self.fighting_enemy.enemy_ram_cd != 0:
                         continue
-                    print("The " + self.fighting_enemy.name + " bites you with a savage grip.")
                     ram_attack_mod = random.uniform(1.2, 1.3)
-                    self.enemy_attack = round(self.fighting_enemy.stats[0] * ram_attack_mod)
+                    self.enemy_attack = round(self.fighting_enemy.stats[1] * ram_attack_mod)
                     self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
                     # checks if enemy is defending
@@ -1312,24 +1308,24 @@ class Warrior_vs_giant_lizard_fight:
                         self.fighting_enemy.enemy_tail_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
                         break
                     print("End Turn")
                     sleep(0.5)
-                    break
+
             else:
                 self.enemy_defence = True
                 self.combat = True
@@ -1340,17 +1336,17 @@ class Warrior_vs_giant_lizard_fight:
                     self.fighting_enemy.enemy_ram_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -1358,14 +1354,14 @@ class Warrior_vs_giant_lizard_fight:
                 print("The " + self.fighting_enemy.name + " readies for your next attack.")
                 print("End Turn")
                 sleep(0.5)
-                break
+
 
             # player turn
             while self.combat:
                 sleep(0.35)
                 attack_mod = random.uniform(1.2, 1.6)
 
-                print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                 print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
 
                 print(self.fighting_player.player_menu)
@@ -1390,17 +1386,17 @@ class Warrior_vs_giant_lizard_fight:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -1421,17 +1417,17 @@ class Warrior_vs_giant_lizard_fight:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -1445,7 +1441,7 @@ class Warrior_vs_giant_lizard_fight:
                     skill_choice = str.lower(input())
                     if skill_choice == "big swing":
                         if self.fighting_player.big_cd != 0:
-                            print("nope")
+                            print("Skill on cooldown.")
                             continue
                         big_attack_mod = random.uniform(2.1, 2.5)
                         self.attack = round(self.fighting_player.stats[0] * big_attack_mod)
@@ -1465,17 +1461,17 @@ class Warrior_vs_giant_lizard_fight:
                             self.fighting_player.double_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -1489,7 +1485,7 @@ class Warrior_vs_giant_lizard_fight:
 
                     elif skill_choice == "double swing":
                         if self.fighting_player.double_cd != 0:
-                            print("nope")
+                            print("Skill on cooldown.")
                             continue
                         print("Using " + self.fighting_player.weapon[4] + " you strike twice in one fell swoop.")
                         for i in range(2):
@@ -1511,17 +1507,17 @@ class Warrior_vs_giant_lizard_fight:
                             self.fighting_player.big_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -1547,7 +1543,7 @@ class Warrior_vs_giant_lizard_fight:
                     else:
                         print(self.fighting_player.player_items)
                         item_choice = str.lower(input())
-                        if item_choice == "shp" and "Small Health Potion" in self.fighting_player.player_items:
+                        if item_choice == "small health potion" and "Small Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 10
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -1555,7 +1551,7 @@ class Warrior_vs_giant_lizard_fight:
                             self.fighting_player.player_items.remove('Small Health Potion')
                             print("Your wounds begin to heal.")
                             sleep(0.5)
-                        elif item_choice == "mhp" and "Medium Health Potion" in self.fighting_player.player_items:
+                        elif item_choice == "medium health potion" and "Medium Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 20
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -1563,7 +1559,7 @@ class Warrior_vs_giant_lizard_fight:
                             self.fighting_player.player_items.remove('Medium Health Potion')
                             print("Your wounds begin to heal.")
                             sleep(0.5)
-                        elif item_choice == "lhp" and "Large Health Potion" in self.fighting_player.player_items:
+                        elif item_choice == "large health potion" and "Large Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 30
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -1625,7 +1621,7 @@ class Warrior_vs_giant_eagle_fight:
             sleep(0.35)
             attack_mod = random.uniform(1.2, 1.6)
 
-            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
 
             print(self.fighting_player.player_menu)
@@ -1650,17 +1646,17 @@ class Warrior_vs_giant_eagle_fight:
                     self.fighting_player.double_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -1681,17 +1677,17 @@ class Warrior_vs_giant_eagle_fight:
                     self.fighting_player.double_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -1705,7 +1701,7 @@ class Warrior_vs_giant_eagle_fight:
                 skill_choice = str.lower(input())
                 if skill_choice == "big swing":
                     if self.fighting_player.big_cd != 0:
-                        print("nope")
+                        print("Skill on cooldown.")
                         continue
                     big_attack_mod = random.uniform(2.1, 2.5)
                     self.attack = round(self.fighting_player.stats[0] * big_attack_mod)
@@ -1725,17 +1721,17 @@ class Warrior_vs_giant_eagle_fight:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -1748,7 +1744,7 @@ class Warrior_vs_giant_eagle_fight:
 
                 elif skill_choice == "double swing":
                     if self.fighting_player.double_cd != 0:
-                        print("nope")
+                        print("Skill on cooldown.")
                         continue
                     print("Using " + self.fighting_player.weapon[4] + " you strike twice in one fell swoop.")
                     for i in range(2):
@@ -1770,17 +1766,17 @@ class Warrior_vs_giant_eagle_fight:
                         self.fighting_player.big_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -1808,13 +1804,15 @@ class Warrior_vs_giant_eagle_fight:
                     # while self.combat:
                     print(self.fighting_player.player_items)
                     item_choice = str.lower(input())
-                    if item_choice == "shp":
-                        # change to functions
-                        self.fighting_player.hp += 10
-                        if self.fighting_player.hp > self.fighting_player.max_hp:
-                            self.fighting_player.hp = self.fighting_player.max_hp
+                    if item_choice == "small health potion" and "Small Health Potion" in self.fighting_player.player_items:
+                            # change to functions?
+                            self.fighting_player.hp += 10
+                            if self.fighting_player.hp > self.fighting_player.max_hp:
+                                self.fighting_player.hp = self.fighting_player.max_hp
                             self.fighting_player.player_items.remove('Small Health Potion')
-                    elif item_choice == "mhp" and "Medium Health Potion" in self.fighting_player.player_items:
+                            print("Your wounds begin to heal.")
+                            sleep(0.5)
+                    elif item_choice == "medium health potion" and "Medium Health Potion" in self.fighting_player.player_items:
                         # change to functions?
                         self.fighting_player.hp += 20
                         if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -1822,7 +1820,7 @@ class Warrior_vs_giant_eagle_fight:
                         self.fighting_player.player_items.remove('Medium Health Potion')
                         print("Your wounds begin to heal.")
                         sleep(0.5)
-                    elif item_choice == "lhp" and "Large Health Potion" in self.fighting_player.player_items:
+                    elif item_choice == "large health potion" and "Large Health Potion" in self.fighting_player.player_items:
                         # change to functions?
                         self.fighting_player.hp += 30
                         if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -1864,17 +1862,17 @@ class Warrior_vs_giant_eagle_fight:
                         self.fighting_enemy.enemy_talons_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -1906,17 +1904,17 @@ class Warrior_vs_giant_eagle_fight:
                             self.fighting_enemy.enemy_talons_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -1947,17 +1945,17 @@ class Warrior_vs_giant_eagle_fight:
                             self.fighting_enemy.enemy_dive_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -1975,17 +1973,17 @@ class Warrior_vs_giant_eagle_fight:
                         self.fighting_enemy.enemy_talons_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -2024,17 +2022,17 @@ class Warrior_vs_giant_eagle_fight:
                     self.fighting_enemy.enemy_talons_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -2065,17 +2063,17 @@ class Warrior_vs_giant_eagle_fight:
                         self.fighting_enemy.enemy_talons_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -2105,17 +2103,17 @@ class Warrior_vs_giant_eagle_fight:
                         self.fighting_enemy.enemy_dive_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -2132,17 +2130,17 @@ class Warrior_vs_giant_eagle_fight:
                     self.fighting_enemy.enemy_talons_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -2156,7 +2154,7 @@ class Warrior_vs_giant_eagle_fight:
                 sleep(0.35)
                 attack_mod = random.uniform(1.2, 1.6)
 
-                print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                 print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
 
                 print(self.fighting_player.player_menu)
@@ -2181,17 +2179,17 @@ class Warrior_vs_giant_eagle_fight:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -2212,17 +2210,17 @@ class Warrior_vs_giant_eagle_fight:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -2236,7 +2234,7 @@ class Warrior_vs_giant_eagle_fight:
                     skill_choice = str.lower(input())
                     if skill_choice == "big swing":
                         if self.fighting_player.big_cd != 0:
-                            print("nope")
+                            print("Skill on cooldown.")
                             continue
                         big_attack_mod = random.uniform(2.1, 2.5)
                         self.attack = round(self.fighting_player.stats[0] * big_attack_mod)
@@ -2256,17 +2254,17 @@ class Warrior_vs_giant_eagle_fight:
                             self.fighting_player.double_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -2280,7 +2278,7 @@ class Warrior_vs_giant_eagle_fight:
 
                     elif skill_choice == "double swing":
                         if self.fighting_player.double_cd != 0:
-                            print("nope")
+                            print("Skill on cooldown.")
                             continue
                         print("Using " + self.fighting_player.weapon[4] + " you strike twice in one fell swoop.")
                         for i in range(2):
@@ -2302,17 +2300,17 @@ class Warrior_vs_giant_eagle_fight:
                             self.fighting_player.big_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -2338,7 +2336,7 @@ class Warrior_vs_giant_eagle_fight:
                     else:
                         print(self.fighting_player.player_items)
                         item_choice = str.lower(input())
-                        if item_choice == "shp" and "Small Health Potion" in self.fighting_player.player_items:
+                        if item_choice == "small health potion" and "Small Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 10
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -2346,7 +2344,7 @@ class Warrior_vs_giant_eagle_fight:
                             self.fighting_player.player_items.remove('Small Health Potion')
                             print("Your wounds begin to heal.")
                             sleep(0.5)
-                        elif item_choice == "mhp" and "Medium Health Potion" in self.fighting_player.player_items:
+                        elif item_choice == "medium health potion" and "Medium Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 20
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -2354,7 +2352,7 @@ class Warrior_vs_giant_eagle_fight:
                             self.fighting_player.player_items.remove('Medium Health Potion')
                             print("Your wounds begin to heal.")
                             sleep(0.5)
-                        elif item_choice == "lhp" and "Large Health Potion" in self.fighting_player.player_items:
+                        elif item_choice == "large health potion" and "Large Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 30
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -2409,7 +2407,7 @@ class Warrior_vs_corrupted_swordsman_fight:
             sleep(0.35)
             attack_mod = random.uniform(1.2, 1.6)
 
-            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
 
             print(self.fighting_player.player_menu)
@@ -2434,17 +2432,17 @@ class Warrior_vs_corrupted_swordsman_fight:
                     self.fighting_player.double_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -2465,17 +2463,17 @@ class Warrior_vs_corrupted_swordsman_fight:
                     self.fighting_player.double_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -2489,7 +2487,7 @@ class Warrior_vs_corrupted_swordsman_fight:
                 skill_choice = str.lower(input())
                 if skill_choice == "big swing":
                     if self.fighting_player.big_cd != 0:
-                        print("nope")
+                        print("Skill on cooldown.")
                         continue
                     big_attack_mod = random.uniform(2.1, 2.5)
                     self.attack = round(self.fighting_player.stats[0] * big_attack_mod)
@@ -2509,17 +2507,17 @@ class Warrior_vs_corrupted_swordsman_fight:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -2533,7 +2531,7 @@ class Warrior_vs_corrupted_swordsman_fight:
 
                 elif skill_choice == "double swing":
                     if self.fighting_player.double_cd != 0:
-                        print("nope")
+                        print("Skill on cooldown.")
                         continue
                     print("Using " + self.fighting_player.weapon[4] + " you strike twice in one fell swoop.")
                     for i in range(2):
@@ -2555,17 +2553,17 @@ class Warrior_vs_corrupted_swordsman_fight:
                         self.fighting_player.big_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -2591,7 +2589,7 @@ class Warrior_vs_corrupted_swordsman_fight:
                 else:
                     print(self.fighting_player.player_items)
                     item_choice = str.lower(input())
-                    if item_choice == "shp" and "Small Health Potion" in self.fighting_player.player_items:
+                    if item_choice == "small health potion" and "Small Health Potion" in self.fighting_player.player_items:
                         # change to functions?
                         self.fighting_player.hp += 10
                         if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -2599,7 +2597,7 @@ class Warrior_vs_corrupted_swordsman_fight:
                         self.fighting_player.player_items.remove('Small Health Potion')
                         print("Your wounds begin to heal.")
                         sleep(0.5)
-                    elif item_choice == "mhp" and "Medium Health Potion" in self.fighting_player.player_items:
+                    elif item_choice == "medium health potion" and "Medium Health Potion" in self.fighting_player.player_items:
                         # change to functions?
                         self.fighting_player.hp += 20
                         if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -2607,7 +2605,7 @@ class Warrior_vs_corrupted_swordsman_fight:
                         self.fighting_player.player_items.remove('Medium Health Potion')
                         print("Your wounds begin to heal.")
                         sleep(0.5)
-                    elif item_choice == "lhp" and "Large Health Potion" in self.fighting_player.player_items:
+                    elif item_choice == "large health potion" and "Large Health Potion" in self.fighting_player.player_items:
                         # change to functions?
                         self.fighting_player.hp += 30
                         if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -2648,17 +2646,17 @@ class Warrior_vs_corrupted_swordsman_fight:
                         self.fighting_enemy.enemy_double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -2671,9 +2669,8 @@ class Warrior_vs_corrupted_swordsman_fight:
                     enemy_skill = random.choice(self.fighting_enemy.enemy_skills)
                     if enemy_skill == "big swing":
                         if self.fighting_enemy.enemy_big_cd != 0:
-                            print("enemy big nope")
                             continue
-                        big_attack_mod = random.uniform(2.1, 2.5)
+                        big_attack_mod = random.uniform(1.6, 1.8)
                         self.enemy_attack = round(self.fighting_enemy.stats[0] * big_attack_mod)
                         self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
@@ -2691,17 +2688,17 @@ class Warrior_vs_corrupted_swordsman_fight:
                             self.fighting_enemy.enemy_double_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -2711,11 +2708,10 @@ class Warrior_vs_corrupted_swordsman_fight:
                         break
                     elif enemy_skill == "double swing":
                         if self.fighting_enemy.enemy_double_cd != 0:
-                            print("enemy double nope")
                             continue
                         print("The " + self.fighting_enemy.name + " manages to strike twice.")
                         for i in range(2):
-                            double_attack_mod = random.uniform(1.2, 1.6)
+                            double_attack_mod = random.uniform(1.2, 1.4)
                             self.enemy_attack = round(self.fighting_enemy.stats[0] * double_attack_mod)
                             self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
@@ -2733,17 +2729,17 @@ class Warrior_vs_corrupted_swordsman_fight:
                             self.fighting_enemy.enemy_big_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -2761,17 +2757,17 @@ class Warrior_vs_corrupted_swordsman_fight:
                         self.fighting_enemy.enemy_double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -2809,17 +2805,17 @@ class Warrior_vs_corrupted_swordsman_fight:
                     self.fighting_enemy.enemy_double_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -2831,9 +2827,8 @@ class Warrior_vs_corrupted_swordsman_fight:
                 enemy_skill = random.choice(self.fighting_enemy.enemy_skills)
                 if enemy_skill == "big swing":
                     if self.fighting_enemy.enemy_big_cd != 0:
-                        print("enemy big nope")
                         continue
-                    big_attack_mod = random.uniform(2.1, 2.5)
+                    big_attack_mod = random.uniform(1.6, 1.8)
                     self.enemy_attack = round(self.fighting_enemy.stats[0] * big_attack_mod)
                     self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
@@ -2851,17 +2846,17 @@ class Warrior_vs_corrupted_swordsman_fight:
                         self.fighting_enemy.enemy_double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -2870,11 +2865,10 @@ class Warrior_vs_corrupted_swordsman_fight:
                     sleep(0.5)
                 elif enemy_skill == "double swing":
                     if self.fighting_enemy.enemy_double_cd != 0:
-                        print("enemy double nope")
                         continue
                     print("The " + self.fighting_enemy.name + " manages to strike twice.")
                     for i in range(2):
-                        double_attack_mod = random.uniform(1.2, 1.6)
+                        double_attack_mod = random.uniform(1.2, 1.4)
                         self.enemy_attack = round(self.fighting_enemy.stats[0] * double_attack_mod)
                         self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
@@ -2892,17 +2886,17 @@ class Warrior_vs_corrupted_swordsman_fight:
                         self.fighting_enemy.enemy_big_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -2919,17 +2913,17 @@ class Warrior_vs_corrupted_swordsman_fight:
                     self.fighting_enemy.enemy_double_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -2943,7 +2937,7 @@ class Warrior_vs_corrupted_swordsman_fight:
                 sleep(0.35)
                 attack_mod = random.uniform(1.2, 1.6)
 
-                print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                 print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
 
                 print(self.fighting_player.player_menu)
@@ -2968,17 +2962,17 @@ class Warrior_vs_corrupted_swordsman_fight:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -2999,17 +2993,17 @@ class Warrior_vs_corrupted_swordsman_fight:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -3023,7 +3017,7 @@ class Warrior_vs_corrupted_swordsman_fight:
                     skill_choice = str.lower(input())
                     if skill_choice == "big swing":
                         if self.fighting_player.big_cd != 0:
-                            print("nope")
+                            print("Skill on cooldown.")
                             continue
                         big_attack_mod = random.uniform(2.1, 2.5)
                         self.attack = round(self.fighting_player.stats[0] * big_attack_mod)
@@ -3043,17 +3037,17 @@ class Warrior_vs_corrupted_swordsman_fight:
                             self.fighting_player.double_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -3067,7 +3061,7 @@ class Warrior_vs_corrupted_swordsman_fight:
 
                     elif skill_choice == "double swing":
                         if self.fighting_player.double_cd != 0:
-                            print("nope")
+                            print("Skill on cooldown.")
                             continue
                         print("Using " + self.fighting_player.weapon[4] + " you strike twice in one fell swoop.")
                         for i in range(2):
@@ -3089,17 +3083,17 @@ class Warrior_vs_corrupted_swordsman_fight:
                             self.fighting_player.big_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -3125,7 +3119,7 @@ class Warrior_vs_corrupted_swordsman_fight:
                     else:
                         print(self.fighting_player.player_items)
                         item_choice = str.lower(input())
-                        if item_choice == "shp" and "Small Health Potion" in self.fighting_player.player_items:
+                        if item_choice == "small health potion" and "Small Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 10
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -3133,7 +3127,7 @@ class Warrior_vs_corrupted_swordsman_fight:
                             self.fighting_player.player_items.remove('Small Health Potion')
                             print("Your wounds begin to heal.")
                             sleep(0.5)
-                        elif item_choice == "mhp" and "Medium Health Potion" in self.fighting_player.player_items:
+                        elif item_choice == "medium health potion" and "Medium Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 20
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -3141,7 +3135,7 @@ class Warrior_vs_corrupted_swordsman_fight:
                             self.fighting_player.player_items.remove('Medium Health Potion')
                             print("Your wounds begin to heal.")
                             sleep(0.5)
-                        elif item_choice == "lhp" and "Large Health Potion" in self.fighting_player.player_items:
+                        elif item_choice == "large health potion" and "Large Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 30
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -3201,7 +3195,7 @@ class Warrior_vs_corrupted_knight_fight:
             sleep(0.35)
             attack_mod = random.uniform(1.2, 1.6)
 
-            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
 
             print(self.fighting_player.player_menu)
@@ -3226,17 +3220,17 @@ class Warrior_vs_corrupted_knight_fight:
                     self.fighting_player.double_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -3257,17 +3251,17 @@ class Warrior_vs_corrupted_knight_fight:
                     self.fighting_player.double_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -3281,7 +3275,7 @@ class Warrior_vs_corrupted_knight_fight:
                 skill_choice = str.lower(input())
                 if skill_choice == "big swing":
                     if self.fighting_player.big_cd != 0:
-                        print("nope")
+                        print("Skill on cooldown.")
                         continue
                     big_attack_mod = random.uniform(2.1, 2.5)
                     self.attack = round(self.fighting_player.stats[0] * big_attack_mod)
@@ -3301,17 +3295,17 @@ class Warrior_vs_corrupted_knight_fight:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -3324,7 +3318,7 @@ class Warrior_vs_corrupted_knight_fight:
 
                 elif skill_choice == "double swing":
                     if self.fighting_player.double_cd != 0:
-                        print("nope")
+                        print("Skill on cooldown.")
                         continue
                     print("Using " + self.fighting_player.weapon[4] + " you strike twice in one fell swoop.")
                     for i in range(2):
@@ -3346,17 +3340,17 @@ class Warrior_vs_corrupted_knight_fight:
                         self.fighting_player.big_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -3384,13 +3378,15 @@ class Warrior_vs_corrupted_knight_fight:
                     # while self.combat:
                     print(self.fighting_player.player_items)
                     item_choice = str.lower(input())
-                    if item_choice == "shp":
-                        # change to functions
-                        self.fighting_player.hp += 10
-                        if self.fighting_player.hp > self.fighting_player.max_hp:
-                            self.fighting_player.hp = self.fighting_player.max_hp
+                    if item_choice == "small health potion" and "Small Health Potion" in self.fighting_player.player_items:
+                            # change to functions?
+                            self.fighting_player.hp += 10
+                            if self.fighting_player.hp > self.fighting_player.max_hp:
+                                self.fighting_player.hp = self.fighting_player.max_hp
                             self.fighting_player.player_items.remove('Small Health Potion')
-                    elif item_choice == "mhp" and "Medium Health Potion" in self.fighting_player.player_items:
+                            print("Your wounds begin to heal.")
+                            sleep(0.5)
+                    elif item_choice == "medium health potion" and "Medium Health Potion" in self.fighting_player.player_items:
                         # change to functions?
                         self.fighting_player.hp += 20
                         if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -3398,7 +3394,7 @@ class Warrior_vs_corrupted_knight_fight:
                         self.fighting_player.player_items.remove('Medium Health Potion')
                         print("Your wounds begin to heal.")
                         sleep(0.5)
-                    elif item_choice == "lhp" and "Large Health Potion" in self.fighting_player.player_items:
+                    elif item_choice == "large health potion" and "Large Health Potion" in self.fighting_player.player_items:
                         # change to functions?
                         self.fighting_player.hp += 30
                         if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -3440,17 +3436,17 @@ class Warrior_vs_corrupted_knight_fight:
                         self.fighting_enemy.enemy_lunge_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -3464,7 +3460,7 @@ class Warrior_vs_corrupted_knight_fight:
                     if enemy_skill == "pommel strike":
                         if self.fighting_enemy.enemy_pommel_cd != 0:
                             continue
-                        pommel_attack_mod = random.uniform(1.6, 1.8)
+                        pommel_attack_mod = random.uniform(1.4, 1.6)
                         self.enemy_attack = round(self.fighting_enemy.stats[1] * pommel_attack_mod)
                         self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
@@ -3482,17 +3478,17 @@ class Warrior_vs_corrupted_knight_fight:
                             self.fighting_enemy.enemy_lunge_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -3503,7 +3499,7 @@ class Warrior_vs_corrupted_knight_fight:
                     elif enemy_skill == "lunge":
                         if self.fighting_enemy.enemy_lunge_cd != 0:
                             continue
-                        lunge_attack_mod = random.uniform(1.2, 1.3)
+                        lunge_attack_mod = random.uniform(1.6, 1.8)
                         self.enemy_attack = round(self.fighting_enemy.stats[0] * lunge_attack_mod)
                         self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
@@ -3522,17 +3518,17 @@ class Warrior_vs_corrupted_knight_fight:
                             self.fighting_enemy.enemy_pommel_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -3550,17 +3546,17 @@ class Warrior_vs_corrupted_knight_fight:
                         self.fighting_enemy.enemy_lunge_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -3599,17 +3595,17 @@ class Warrior_vs_corrupted_knight_fight:
                     self.fighting_enemy.enemy_lunge_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -3623,7 +3619,7 @@ class Warrior_vs_corrupted_knight_fight:
                 if enemy_skill == "pommel strike":
                     if self.fighting_enemy.enemy_pommel_cd != 0:
                         continue
-                    pommel_attack_mod = random.uniform(1.6, 1.8)
+                    pommel_attack_mod = random.uniform(1.4, 1.6)
                     self.enemy_attack = round(self.fighting_enemy.stats[1] * pommel_attack_mod)
                     self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
@@ -3641,17 +3637,17 @@ class Warrior_vs_corrupted_knight_fight:
                         self.fighting_enemy.enemy_lunge_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -3662,7 +3658,7 @@ class Warrior_vs_corrupted_knight_fight:
                 elif enemy_skill == "lunge":
                     if self.fighting_enemy.enemy_lunge_cd != 0:
                         continue
-                    lunge_attack_mod = random.uniform(1.2, 1.3)
+                    lunge_attack_mod = random.uniform(1.6, 1.8)
                     self.enemy_attack = round(self.fighting_enemy.stats[0] * lunge_attack_mod)
                     self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
@@ -3681,17 +3677,17 @@ class Warrior_vs_corrupted_knight_fight:
                         self.fighting_enemy.enemy_pommel_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -3709,17 +3705,17 @@ class Warrior_vs_corrupted_knight_fight:
                     self.fighting_enemy.enemy_lunge_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -3734,7 +3730,7 @@ class Warrior_vs_corrupted_knight_fight:
                 sleep(0.35)
                 attack_mod = random.uniform(1.2, 1.6)
 
-                print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                 print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
 
                 print(self.fighting_player.player_menu)
@@ -3759,23 +3755,24 @@ class Warrior_vs_corrupted_knight_fight:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
                         break
 
                     print("End Turn")
+                    break
                 elif action_choice == "attack?":
                     print("With " + self.fighting_player.weapon[4] + " you deal " + str(round(self.fighting_player.stats[0] * 1.2)) + "-" + str(round(self.fighting_player.stats[0] * 1.6)) + " attack damage.")
                     continue
@@ -3790,17 +3787,17 @@ class Warrior_vs_corrupted_knight_fight:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -3808,13 +3805,13 @@ class Warrior_vs_corrupted_knight_fight:
                     print("You ready yourself for the enemy's next attack.")
                     sleep(0.5)
                     print("End Turn")
-
+                    break
                 elif action_choice == "skills":
                     print(self.fighting_player.player_skills)
                     skill_choice = str.lower(input())
                     if skill_choice == "big swing":
                         if self.fighting_player.big_cd != 0:
-                            print("nope")
+                            print("Skill on cooldown.")
                             continue
                         big_attack_mod = random.uniform(2.1, 2.5)
                         self.attack = round(self.fighting_player.stats[0] * big_attack_mod)
@@ -3834,31 +3831,31 @@ class Warrior_vs_corrupted_knight_fight:
                             self.fighting_player.double_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
                             break
 
                         print("End Turn")
-
+                        break
                     elif skill_choice == "big swing?":
                         print("Deal out a strong attack." + "\n" + "Cooldown Time: " + str(self.fighting_player.big_cdt) + "\n" + "Current Cooldown: " + str(self.fighting_player.big_cd))
                         continue
 
                     elif skill_choice == "double swing":
                         if self.fighting_player.double_cd != 0:
-                            print("nope")
+                            print("Skill on cooldown.")
                             continue
                         print("Using " + self.fighting_player.weapon[4] + " you strike twice in one fell swoop.")
                         for i in range(2):
@@ -3880,23 +3877,23 @@ class Warrior_vs_corrupted_knight_fight:
                             self.fighting_player.big_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
                             break
                         print("End Turn")
-
+                        break
                     elif skill_choice == "double swing?":
                         print("Deal two attacks in one move." + "\n" + "Cooldown Time: " + str(self.fighting_player.double_cdt) + "\n" + "Current Cooldown: " + str(self.fighting_player.double_cd))
                         continue
@@ -3916,7 +3913,7 @@ class Warrior_vs_corrupted_knight_fight:
                     else:
                         print(self.fighting_player.player_items)
                         item_choice = str.lower(input())
-                        if item_choice == "shp" and "Small Health Potion" in self.fighting_player.player_items:
+                        if item_choice == "small health potion" and "Small Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 10
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -3924,7 +3921,8 @@ class Warrior_vs_corrupted_knight_fight:
                             self.fighting_player.player_items.remove('Small Health Potion')
                             print("Your wounds begin to heal.")
                             sleep(0.5)
-                        elif item_choice == "mhp" and "Medium Health Potion" in self.fighting_player.player_items:
+                            break
+                        elif item_choice == "medium health potion" and "Medium Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 20
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -3932,7 +3930,8 @@ class Warrior_vs_corrupted_knight_fight:
                             self.fighting_player.player_items.remove('Medium Health Potion')
                             print("Your wounds begin to heal.")
                             sleep(0.5)
-                        elif item_choice == "lhp" and "Large Health Potion" in self.fighting_player.player_items:
+                            break
+                        elif item_choice == "large health potion" and "Large Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 30
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -3940,6 +3939,7 @@ class Warrior_vs_corrupted_knight_fight:
                             self.fighting_player.player_items.remove('Large Health Potion')
                             print("Your wounds begin to heal.")
                             sleep(0.5)
+                            break
                         elif item_choice == "back":
                             continue
                         else:
@@ -3986,7 +3986,7 @@ class Warrior_vs_corrupted_acolyte_fight:
             sleep(0.35)
             attack_mod = random.uniform(1.2, 1.6)
 
-            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
 
             print(self.fighting_player.player_menu)
@@ -4011,17 +4011,17 @@ class Warrior_vs_corrupted_acolyte_fight:
                     self.fighting_player.double_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -4042,17 +4042,17 @@ class Warrior_vs_corrupted_acolyte_fight:
                     self.fighting_player.double_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -4066,7 +4066,7 @@ class Warrior_vs_corrupted_acolyte_fight:
                 skill_choice = str.lower(input())
                 if skill_choice == "big swing":
                     if self.fighting_player.big_cd != 0:
-                        print("nope")
+                        print("Skill on cooldown.")
                         continue
                     big_attack_mod = random.uniform(2.1, 2.5)
                     self.attack = round(self.fighting_player.stats[0] * big_attack_mod)
@@ -4086,17 +4086,17 @@ class Warrior_vs_corrupted_acolyte_fight:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -4109,7 +4109,7 @@ class Warrior_vs_corrupted_acolyte_fight:
 
                 elif skill_choice == "double swing":
                     if self.fighting_player.double_cd != 0:
-                        print("nope")
+                        print("Skill on cooldown.")
                         continue
                     print("Using " + self.fighting_player.weapon[4] + " you strike twice in one fell swoop.")
                     for i in range(2):
@@ -4131,17 +4131,17 @@ class Warrior_vs_corrupted_acolyte_fight:
                         self.fighting_player.big_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -4169,13 +4169,15 @@ class Warrior_vs_corrupted_acolyte_fight:
                     # while self.combat:
                     print(self.fighting_player.player_items)
                     item_choice = str.lower(input())
-                    if item_choice == "shp":
-                        # change to functions
-                        self.fighting_player.hp += 10
-                        if self.fighting_player.hp > self.fighting_player.max_hp:
-                            self.fighting_player.hp = self.fighting_player.max_hp
+                    if item_choice == "small health potion" and "Small Health Potion" in self.fighting_player.player_items:
+                            # change to functions?
+                            self.fighting_player.hp += 10
+                            if self.fighting_player.hp > self.fighting_player.max_hp:
+                                self.fighting_player.hp = self.fighting_player.max_hp
                             self.fighting_player.player_items.remove('Small Health Potion')
-                    elif item_choice == "mhp" and "Medium Health Potion" in self.fighting_player.player_items:
+                            print("Your wounds begin to heal.")
+                            sleep(0.5)
+                    elif item_choice == "medium health potion" and "Medium Health Potion" in self.fighting_player.player_items:
                         # change to functions?
                         self.fighting_player.hp += 20
                         if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -4183,7 +4185,7 @@ class Warrior_vs_corrupted_acolyte_fight:
                         self.fighting_player.player_items.remove('Medium Health Potion')
                         print("Your wounds begin to heal.")
                         sleep(0.5)
-                    elif item_choice == "lhp" and "Large Health Potion" in self.fighting_player.player_items:
+                    elif item_choice == "large health potion" and "Large Health Potion" in self.fighting_player.player_items:
                         # change to functions?
                         self.fighting_player.hp += 30
                         if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -4207,7 +4209,7 @@ class Warrior_vs_corrupted_acolyte_fight:
 
                 if enemy_action == "attack":
                     enemy_attack_mod = random.uniform(1.2, 1.6)
-                    self.enemy_attack = round(self.fighting_enemy.stats[0] * enemy_attack_mod)
+                    self.enemy_attack = round(self.fighting_enemy.stats[2] * enemy_attack_mod)
                     self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
                     if self.player_defence is True:
@@ -4225,17 +4227,17 @@ class Warrior_vs_corrupted_acolyte_fight:
                         self.fighting_enemy.enemy_fireb_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -4267,17 +4269,17 @@ class Warrior_vs_corrupted_acolyte_fight:
                             self.fighting_enemy.enemy_fireb_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -4288,8 +4290,8 @@ class Warrior_vs_corrupted_acolyte_fight:
                     elif enemy_skill == "fire bolt":
                         if self.fighting_enemy.enemy_fireb_cd != 0:
                             continue
-                        fireb_attack_mod = random.uniform(1.2, 1.3)
-                        self.enemy_attack = round(self.fighting_enemy.stats[0] * fireb_attack_mod)
+                        fireb_attack_mod = random.uniform(1.4, 1.6)
+                        self.enemy_attack = round(self.fighting_enemy.stats[2] * fireb_attack_mod)
                         self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
                         # checks if enemy is defending
@@ -4307,17 +4309,17 @@ class Warrior_vs_corrupted_acolyte_fight:
                             self.fighting_enemy.enemy_chaosb_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -4335,17 +4337,17 @@ class Warrior_vs_corrupted_acolyte_fight:
                         self.fighting_enemy.enemy_fireb_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -4366,7 +4368,7 @@ class Warrior_vs_corrupted_acolyte_fight:
 
             if enemy_action == "attack":
                 enemy_attack_mod = random.uniform(1.2, 1.6)
-                self.enemy_attack = round(self.fighting_enemy.stats[0] * enemy_attack_mod)
+                self.enemy_attack = round(self.fighting_enemy.stats[2] * enemy_attack_mod)
                 self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
                 if self.player_defence is True:
@@ -4384,17 +4386,17 @@ class Warrior_vs_corrupted_acolyte_fight:
                     self.fighting_enemy.enemy_fireb_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -4426,17 +4428,17 @@ class Warrior_vs_corrupted_acolyte_fight:
                         self.fighting_enemy.enemy_fireb_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -4447,8 +4449,8 @@ class Warrior_vs_corrupted_acolyte_fight:
                 elif enemy_skill == "fire bolt":
                     if self.fighting_enemy.enemy_fireb_cd != 0:
                         continue
-                    fireb_attack_mod = random.uniform(1.2, 1.3)
-                    self.enemy_attack = round(self.fighting_enemy.stats[0] * fireb_attack_mod)
+                    fireb_attack_mod = random.uniform(1.4, 1.6)
+                    self.enemy_attack = round(self.fighting_enemy.stats[2] * fireb_attack_mod)
                     self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
                     # checks if enemy is defending
@@ -4466,17 +4468,17 @@ class Warrior_vs_corrupted_acolyte_fight:
                         self.fighting_enemy.enemy_chaosb_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -4494,17 +4496,17 @@ class Warrior_vs_corrupted_acolyte_fight:
                     self.fighting_enemy.enemy_fireb_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -4519,7 +4521,7 @@ class Warrior_vs_corrupted_acolyte_fight:
                 sleep(0.35)
                 attack_mod = random.uniform(1.2, 1.6)
 
-                print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                 print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
 
                 print(self.fighting_player.player_menu)
@@ -4544,17 +4546,17 @@ class Warrior_vs_corrupted_acolyte_fight:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -4575,17 +4577,17 @@ class Warrior_vs_corrupted_acolyte_fight:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -4599,7 +4601,7 @@ class Warrior_vs_corrupted_acolyte_fight:
                     skill_choice = str.lower(input())
                     if skill_choice == "big swing":
                         if self.fighting_player.big_cd != 0:
-                            print("nope")
+                            print("Skill on cooldown.")
                             continue
                         big_attack_mod = random.uniform(2.1, 2.5)
                         self.attack = round(self.fighting_player.stats[0] * big_attack_mod)
@@ -4619,17 +4621,17 @@ class Warrior_vs_corrupted_acolyte_fight:
                             self.fighting_player.double_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -4643,7 +4645,7 @@ class Warrior_vs_corrupted_acolyte_fight:
 
                     elif skill_choice == "double swing":
                         if self.fighting_player.double_cd != 0:
-                            print("nope")
+                            print("Skill on cooldown.")
                             continue
                         print("Using " + self.fighting_player.weapon[4] + " you strike twice in one fell swoop.")
                         for i in range(2):
@@ -4665,17 +4667,17 @@ class Warrior_vs_corrupted_acolyte_fight:
                             self.fighting_player.big_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -4701,7 +4703,7 @@ class Warrior_vs_corrupted_acolyte_fight:
                     else:
                         print(self.fighting_player.player_items)
                         item_choice = str.lower(input())
-                        if item_choice == "shp" and "Small Health Potion" in self.fighting_player.player_items:
+                        if item_choice == "small health potion" and "Small Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 10
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -4709,7 +4711,7 @@ class Warrior_vs_corrupted_acolyte_fight:
                             self.fighting_player.player_items.remove('Small Health Potion')
                             print("Your wounds begin to heal.")
                             sleep(0.5)
-                        elif item_choice == "mhp" and "Medium Health Potion" in self.fighting_player.player_items:
+                        elif item_choice == "medium health potion" and "Medium Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 20
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -4717,7 +4719,7 @@ class Warrior_vs_corrupted_acolyte_fight:
                             self.fighting_player.player_items.remove('Medium Health Potion')
                             print("Your wounds begin to heal.")
                             sleep(0.5)
-                        elif item_choice == "lhp" and "Large Health Potion" in self.fighting_player.player_items:
+                        elif item_choice == "large health potion" and "Large Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 30
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -4772,7 +4774,7 @@ class Warrior_vs_goblin:
             sleep(0.35)
             attack_mod = random.uniform(1.2, 1.6)
 
-            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
 
             print(self.fighting_player.player_menu)
@@ -4797,17 +4799,17 @@ class Warrior_vs_goblin:
                     self.fighting_player.double_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -4828,17 +4830,17 @@ class Warrior_vs_goblin:
                     self.fighting_player.double_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -4852,7 +4854,7 @@ class Warrior_vs_goblin:
                 skill_choice = str.lower(input())
                 if skill_choice == "big swing":
                     if self.fighting_player.big_cd != 0:
-                        print("nope")
+                        print("Skill on cooldown.")
                         continue
                     big_attack_mod = random.uniform(2.1, 2.5)
                     self.attack = round(self.fighting_player.stats[0] * big_attack_mod)
@@ -4872,17 +4874,17 @@ class Warrior_vs_goblin:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -4895,7 +4897,7 @@ class Warrior_vs_goblin:
 
                 elif skill_choice == "double swing":
                     if self.fighting_player.double_cd != 0:
-                        print("nope")
+                        print("Skill on cooldown.")
                         continue
                     print("Using " + self.fighting_player.weapon[4] + " you strike twice in one fell swoop.")
                     for i in range(2):
@@ -4917,17 +4919,17 @@ class Warrior_vs_goblin:
                         self.fighting_player.big_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -4955,13 +4957,15 @@ class Warrior_vs_goblin:
                     # while self.combat:
                     print(self.fighting_player.player_items)
                     item_choice = str.lower(input())
-                    if item_choice == "shp":
-                        # change to functions
-                        self.fighting_player.hp += 10
-                        if self.fighting_player.hp > self.fighting_player.max_hp:
-                            self.fighting_player.hp = self.fighting_player.max_hp
+                    if item_choice == "small health potion" and "Small Health Potion" in self.fighting_player.player_items:
+                            # change to functions?
+                            self.fighting_player.hp += 10
+                            if self.fighting_player.hp > self.fighting_player.max_hp:
+                                self.fighting_player.hp = self.fighting_player.max_hp
                             self.fighting_player.player_items.remove('Small Health Potion')
-                    elif item_choice == "mhp" and "Medium Health Potion" in self.fighting_player.player_items:
+                            print("Your wounds begin to heal.")
+                            sleep(0.5)
+                    elif item_choice == "medium health potion" and "Medium Health Potion" in self.fighting_player.player_items:
                         # change to functions?
                         self.fighting_player.hp += 20
                         if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -4969,7 +4973,7 @@ class Warrior_vs_goblin:
                         self.fighting_player.player_items.remove('Medium Health Potion')
                         print("Your wounds begin to heal.")
                         sleep(0.5)
-                    elif item_choice == "lhp" and "Large Health Potion" in self.fighting_player.player_items:
+                    elif item_choice == "large health potion" and "Large Health Potion" in self.fighting_player.player_items:
                         # change to functions?
                         self.fighting_player.hp += 30
                         if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -4993,7 +4997,7 @@ class Warrior_vs_goblin:
 
                 if enemy_action == "attack":
                     enemy_attack_mod = random.uniform(1.2, 1.6)
-                    self.enemy_attack = round(self.fighting_enemy.stats[0] * enemy_attack_mod)
+                    self.enemy_attack = round(self.fighting_enemy.stats[1] * enemy_attack_mod)
                     self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
                     if self.player_defence is True:
@@ -5011,17 +5015,17 @@ class Warrior_vs_goblin:
                         self.fighting_enemy.enemy_knee_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -5035,8 +5039,8 @@ class Warrior_vs_goblin:
                     if enemy_skill == "lil hit":
                         if self.fighting_enemy.enemy_lil_cd != 0:
                             continue
-                        lil_attack_mod = random.uniform(1.6, 1.8)
-                        self.enemy_attack = round(self.fighting_enemy.stats[0] * lil_attack_mod)
+                        lil_attack_mod = random.uniform(1.4, 1.6)
+                        self.enemy_attack = round(self.fighting_enemy.stats[1] * lil_attack_mod)
                         self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
                         if self.player_defence is True:
@@ -5053,17 +5057,17 @@ class Warrior_vs_goblin:
                             self.fighting_enemy.enemy_knee_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -5074,8 +5078,8 @@ class Warrior_vs_goblin:
                     elif enemy_skill == "mace knee":
                         if self.fighting_enemy.enemy_knee_cd != 0:
                             continue
-                        knee_attack_mod = random.uniform(1.2, 1.3)
-                        self.enemy_attack = round(self.fighting_enemy.stats[0] * knee_attack_mod)
+                        knee_attack_mod = random.uniform(1.6, 1.8)
+                        self.enemy_attack = round(self.fighting_enemy.stats[1] * knee_attack_mod)
                         self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
                         # checks if player is defending
@@ -5093,17 +5097,17 @@ class Warrior_vs_goblin:
                             self.fighting_enemy.enemy_lil_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -5121,17 +5125,17 @@ class Warrior_vs_goblin:
                         self.fighting_enemy.enemy_knee_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -5152,7 +5156,7 @@ class Warrior_vs_goblin:
 
             if enemy_action == "attack":
                 enemy_attack_mod = random.uniform(1.2, 1.6)
-                self.enemy_attack = round(self.fighting_enemy.stats[0] * enemy_attack_mod)
+                self.enemy_attack = round(self.fighting_enemy.stats[1] * enemy_attack_mod)
                 self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
                 if self.player_defence is True:
@@ -5170,17 +5174,17 @@ class Warrior_vs_goblin:
                     self.fighting_enemy.enemy_knee_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -5194,8 +5198,8 @@ class Warrior_vs_goblin:
                 if enemy_skill == "lil hit":
                     if self.fighting_enemy.enemy_lil_cd != 0:
                         continue
-                    lil_attack_mod = random.uniform(1.6, 1.8)
-                    self.enemy_attack = round(self.fighting_enemy.stats[0] * lil_attack_mod)
+                    lil_attack_mod = random.uniform(1.4, 1.6)
+                    self.enemy_attack = round(self.fighting_enemy.stats[1] * lil_attack_mod)
                     self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
                     if self.player_defence is True:
@@ -5212,17 +5216,17 @@ class Warrior_vs_goblin:
                         self.fighting_enemy.enemy_knee_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -5233,8 +5237,8 @@ class Warrior_vs_goblin:
                 elif enemy_skill == "mace knee":
                     if self.fighting_enemy.enemy_knee_cd != 0:
                         continue
-                    knee_attack_mod = random.uniform(1.2, 1.3)
-                    self.enemy_attack = round(self.fighting_enemy.stats[0] * knee_attack_mod)
+                    knee_attack_mod = random.uniform(1.6, 1.8)
+                    self.enemy_attack = round(self.fighting_enemy.stats[1] * knee_attack_mod)
                     self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
                     # checks if player is defending
@@ -5252,17 +5256,17 @@ class Warrior_vs_goblin:
                         self.fighting_enemy.enemy_lil_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -5280,17 +5284,17 @@ class Warrior_vs_goblin:
                     self.fighting_enemy.enemy_knee_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -5305,7 +5309,7 @@ class Warrior_vs_goblin:
                 sleep(0.35)
                 attack_mod = random.uniform(1.2, 1.6)
 
-                print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                 print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
 
                 print(self.fighting_player.player_menu)
@@ -5330,17 +5334,17 @@ class Warrior_vs_goblin:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -5361,17 +5365,17 @@ class Warrior_vs_goblin:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -5385,7 +5389,7 @@ class Warrior_vs_goblin:
                     skill_choice = str.lower(input())
                     if skill_choice == "big swing":
                         if self.fighting_player.big_cd != 0:
-                            print("nope")
+                            print("Skill on cooldown.")
                             continue
                         big_attack_mod = random.uniform(2.1, 2.5)
                         self.attack = round(self.fighting_player.stats[0] * big_attack_mod)
@@ -5405,17 +5409,17 @@ class Warrior_vs_goblin:
                             self.fighting_player.double_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -5429,7 +5433,7 @@ class Warrior_vs_goblin:
 
                     elif skill_choice == "double swing":
                         if self.fighting_player.double_cd != 0:
-                            print("nope")
+                            print("Skill on cooldown.")
                             continue
                         print("Using " + self.fighting_player.weapon[4] + " you strike twice in one fell swoop.")
                         for i in range(2):
@@ -5451,17 +5455,17 @@ class Warrior_vs_goblin:
                             self.fighting_player.big_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -5487,7 +5491,7 @@ class Warrior_vs_goblin:
                     else:
                         print(self.fighting_player.player_items)
                         item_choice = str.lower(input())
-                        if item_choice == "shp" and "Small Health Potion" in self.fighting_player.player_items:
+                        if item_choice == "small health potion" and "Small Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 10
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -5495,7 +5499,7 @@ class Warrior_vs_goblin:
                             self.fighting_player.player_items.remove('Small Health Potion')
                             print("Your wounds begin to heal.")
                             sleep(0.5)
-                        elif item_choice == "mhp" and "Medium Health Potion" in self.fighting_player.player_items:
+                        elif item_choice == "medium health potion" and "Medium Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 20
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -5503,7 +5507,7 @@ class Warrior_vs_goblin:
                             self.fighting_player.player_items.remove('Medium Health Potion')
                             print("Your wounds begin to heal.")
                             sleep(0.5)
-                        elif item_choice == "lhp" and "Large Health Potion" in self.fighting_player.player_items:
+                        elif item_choice == "large health potion" and "Large Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 30
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -5558,7 +5562,7 @@ class Warrior_vs_bugbear:
             sleep(0.35)
             attack_mod = random.uniform(1.2, 1.6)
 
-            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
 
             print(self.fighting_player.player_menu)
@@ -5583,17 +5587,17 @@ class Warrior_vs_bugbear:
                     self.fighting_player.double_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -5614,17 +5618,17 @@ class Warrior_vs_bugbear:
                     self.fighting_player.double_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -5638,7 +5642,7 @@ class Warrior_vs_bugbear:
                 skill_choice = str.lower(input())
                 if skill_choice == "big swing":
                     if self.fighting_player.big_cd != 0:
-                        print("nope")
+                        print("Skill on cooldown.")
                         continue
                     big_attack_mod = random.uniform(2.1, 2.5)
                     self.attack = round(self.fighting_player.stats[0] * big_attack_mod)
@@ -5658,17 +5662,17 @@ class Warrior_vs_bugbear:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -5681,7 +5685,7 @@ class Warrior_vs_bugbear:
 
                 elif skill_choice == "double swing":
                     if self.fighting_player.double_cd != 0:
-                        print("nope")
+                        print("Skill on cooldown.")
                         continue
                     print("Using " + self.fighting_player.weapon[4] + " you strike twice in one fell swoop.")
                     for i in range(2):
@@ -5703,17 +5707,17 @@ class Warrior_vs_bugbear:
                         self.fighting_player.big_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -5741,13 +5745,15 @@ class Warrior_vs_bugbear:
                     # while self.combat:
                     print(self.fighting_player.player_items)
                     item_choice = str.lower(input())
-                    if item_choice == "shp":
-                        # change to functions
-                        self.fighting_player.hp += 10
-                        if self.fighting_player.hp > self.fighting_player.max_hp:
-                            self.fighting_player.hp = self.fighting_player.max_hp
+                    if item_choice == "small health potion" and "Small Health Potion" in self.fighting_player.player_items:
+                            # change to functions?
+                            self.fighting_player.hp += 10
+                            if self.fighting_player.hp > self.fighting_player.max_hp:
+                                self.fighting_player.hp = self.fighting_player.max_hp
                             self.fighting_player.player_items.remove('Small Health Potion')
-                    elif item_choice == "mhp" and "Medium Health Potion" in self.fighting_player.player_items:
+                            print("Your wounds begin to heal.")
+                            sleep(0.5)
+                    elif item_choice == "medium health potion" and "Medium Health Potion" in self.fighting_player.player_items:
                         # change to functions?
                         self.fighting_player.hp += 20
                         if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -5755,7 +5761,7 @@ class Warrior_vs_bugbear:
                         self.fighting_player.player_items.remove('Medium Health Potion')
                         print("Your wounds begin to heal.")
                         sleep(0.5)
-                    elif item_choice == "lhp" and "Large Health Potion" in self.fighting_player.player_items:
+                    elif item_choice == "large health potion" and "Large Health Potion" in self.fighting_player.player_items:
                         # change to functions?
                         self.fighting_player.hp += 30
                         if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -5779,7 +5785,7 @@ class Warrior_vs_bugbear:
 
                 if enemy_action == "attack":
                     enemy_attack_mod = random.uniform(1.2, 1.6)
-                    self.enemy_attack = round(self.fighting_enemy.stats[0] * enemy_attack_mod)
+                    self.enemy_attack = round(self.fighting_enemy.stats[1] * enemy_attack_mod)
                     self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
                     if self.player_defence is True:
@@ -5797,17 +5803,17 @@ class Warrior_vs_bugbear:
                         self.fighting_enemy.enemy_charge_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -5839,17 +5845,17 @@ class Warrior_vs_bugbear:
                             self.fighting_enemy.enemy_charge_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -5860,7 +5866,7 @@ class Warrior_vs_bugbear:
                     elif enemy_skill == "charge":
                         if self.fighting_enemy.enemy_charge_cd != 0:
                             continue
-                        charge_attack_mod = random.uniform(1.2, 1.3)
+                        charge_attack_mod = random.uniform(1.4, 1.6)
                         self.enemy_attack = round(self.fighting_enemy.stats[0] * charge_attack_mod)
                         self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
@@ -5879,17 +5885,17 @@ class Warrior_vs_bugbear:
                             self.fighting_enemy.enemy_club_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -5907,17 +5913,17 @@ class Warrior_vs_bugbear:
                         self.fighting_enemy.enemy_charge_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -5956,17 +5962,17 @@ class Warrior_vs_bugbear:
                     self.fighting_enemy.enemy_charge_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -5998,17 +6004,17 @@ class Warrior_vs_bugbear:
                         self.fighting_enemy.enemy_charge_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -6019,7 +6025,7 @@ class Warrior_vs_bugbear:
                 elif enemy_skill == "charge":
                     if self.fighting_enemy.enemy_charge_cd != 0:
                         continue
-                    charge_attack_mod = random.uniform(1.2, 1.3)
+                    charge_attack_mod = random.uniform(1.4, 1.6)
                     self.enemy_attack = round(self.fighting_enemy.stats[0] * charge_attack_mod)
                     self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
@@ -6038,17 +6044,17 @@ class Warrior_vs_bugbear:
                         self.fighting_enemy.enemy_club_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -6066,17 +6072,17 @@ class Warrior_vs_bugbear:
                         self.fighting_enemy.enemy_charge_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -6091,7 +6097,7 @@ class Warrior_vs_bugbear:
                 sleep(0.35)
                 attack_mod = random.uniform(1.2, 1.6)
 
-                print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                 print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
 
                 print(self.fighting_player.player_menu)
@@ -6116,17 +6122,17 @@ class Warrior_vs_bugbear:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -6147,17 +6153,17 @@ class Warrior_vs_bugbear:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -6171,7 +6177,7 @@ class Warrior_vs_bugbear:
                     skill_choice = str.lower(input())
                     if skill_choice == "big swing":
                         if self.fighting_player.big_cd != 0:
-                            print("nope")
+                            print("Skill on cooldown.")
                             continue
                         big_attack_mod = random.uniform(2.1, 2.5)
                         self.attack = round(self.fighting_player.stats[0] * big_attack_mod)
@@ -6191,17 +6197,17 @@ class Warrior_vs_bugbear:
                             self.fighting_player.double_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -6215,7 +6221,7 @@ class Warrior_vs_bugbear:
 
                     elif skill_choice == "double swing":
                         if self.fighting_player.double_cd != 0:
-                            print("nope")
+                            print("Skill on cooldown.")
                             continue
                         print("Using " + self.fighting_player.weapon[4] + " you strike twice in one fell swoop.")
                         for i in range(2):
@@ -6237,17 +6243,17 @@ class Warrior_vs_bugbear:
                             self.fighting_player.big_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -6273,7 +6279,7 @@ class Warrior_vs_bugbear:
                     else:
                         print(self.fighting_player.player_items)
                         item_choice = str.lower(input())
-                        if item_choice == "shp" and "Small Health Potion" in self.fighting_player.player_items:
+                        if item_choice == "small health potion" and "Small Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 10
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -6281,7 +6287,7 @@ class Warrior_vs_bugbear:
                             self.fighting_player.player_items.remove('Small Health Potion')
                             print("Your wounds begin to heal.")
                             sleep(0.5)
-                        elif item_choice == "mhp" and "Medium Health Potion" in self.fighting_player.player_items:
+                        elif item_choice == "medium health potion" and "Medium Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 20
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -6289,7 +6295,7 @@ class Warrior_vs_bugbear:
                             self.fighting_player.player_items.remove('Medium Health Potion')
                             print("Your wounds begin to heal.")
                             sleep(0.5)
-                        elif item_choice == "lhp" and "Large Health Potion" in self.fighting_player.player_items:
+                        elif item_choice == "large health potion" and "Large Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 30
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -6344,7 +6350,7 @@ class Warrior_vs_ogre:
             sleep(0.35)
             attack_mod = random.uniform(1.2, 1.6)
 
-            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
 
             print(self.fighting_player.player_menu)
@@ -6369,17 +6375,17 @@ class Warrior_vs_ogre:
                     self.fighting_player.double_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -6400,17 +6406,17 @@ class Warrior_vs_ogre:
                     self.fighting_player.double_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -6424,7 +6430,7 @@ class Warrior_vs_ogre:
                 skill_choice = str.lower(input())
                 if skill_choice == "big swing":
                     if self.fighting_player.big_cd != 0:
-                        print("nope")
+                        print("Skill on cooldown.")
                         continue
                     big_attack_mod = random.uniform(2.1, 2.5)
                     self.attack = round(self.fighting_player.stats[0] * big_attack_mod)
@@ -6444,17 +6450,17 @@ class Warrior_vs_ogre:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -6467,7 +6473,7 @@ class Warrior_vs_ogre:
 
                 elif skill_choice == "double swing":
                     if self.fighting_player.double_cd != 0:
-                        print("nope")
+                        print("Skill on cooldown.")
                         continue
                     print("Using " + self.fighting_player.weapon[4] + " you strike twice in one fell swoop.")
                     for i in range(2):
@@ -6489,17 +6495,17 @@ class Warrior_vs_ogre:
                         self.fighting_player.big_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -6527,13 +6533,15 @@ class Warrior_vs_ogre:
                     # while self.combat:
                     print(self.fighting_player.player_items)
                     item_choice = str.lower(input())
-                    if item_choice == "shp":
-                        # change to functions
-                        self.fighting_player.hp += 10
-                        if self.fighting_player.hp > self.fighting_player.max_hp:
-                            self.fighting_player.hp = self.fighting_player.max_hp
+                    if item_choice == "small health potion" and "Small Health Potion" in self.fighting_player.player_items:
+                            # change to functions?
+                            self.fighting_player.hp += 10
+                            if self.fighting_player.hp > self.fighting_player.max_hp:
+                                self.fighting_player.hp = self.fighting_player.max_hp
                             self.fighting_player.player_items.remove('Small Health Potion')
-                    elif item_choice == "mhp" and "Medium Health Potion" in self.fighting_player.player_items:
+                            print("Your wounds begin to heal.")
+                            sleep(0.5)
+                    elif item_choice == "medium health potion" and "Medium Health Potion" in self.fighting_player.player_items:
                         # change to functions?
                         self.fighting_player.hp += 20
                         if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -6541,7 +6549,7 @@ class Warrior_vs_ogre:
                         self.fighting_player.player_items.remove('Medium Health Potion')
                         print("Your wounds begin to heal.")
                         sleep(0.5)
-                    elif item_choice == "lhp" and "Large Health Potion" in self.fighting_player.player_items:
+                    elif item_choice == "large health potion" and "Large Health Potion" in self.fighting_player.player_items:
                         # change to functions?
                         self.fighting_player.hp += 30
                         if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -6583,17 +6591,17 @@ class Warrior_vs_ogre:
                         self.fighting_enemy.enemy_bash_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -6625,17 +6633,17 @@ class Warrior_vs_ogre:
                             self.fighting_enemy.enemy_bash_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -6646,7 +6654,7 @@ class Warrior_vs_ogre:
                     elif enemy_skill == "bash":
                         if self.fighting_enemy.enemy_bash_cd != 0:
                             continue
-                        bash_attack_mod = random.uniform(1.2, 1.3)
+                        bash_attack_mod = random.uniform(1.6, 1.8)
                         self.enemy_attack = round(self.fighting_enemy.stats[0] * bash_attack_mod)
                         self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
@@ -6665,17 +6673,17 @@ class Warrior_vs_ogre:
                             self.fighting_enemy.enemy_smash_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -6693,17 +6701,17 @@ class Warrior_vs_ogre:
                         self.fighting_enemy.enemy_bash_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -6742,17 +6750,17 @@ class Warrior_vs_ogre:
                     self.fighting_enemy.enemy_bash_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -6784,17 +6792,17 @@ class Warrior_vs_ogre:
                         self.fighting_enemy.enemy_bash_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -6805,7 +6813,7 @@ class Warrior_vs_ogre:
                 elif enemy_skill == "bash":
                     if self.fighting_enemy.enemy_bash_cd != 0:
                         continue
-                    bash_attack_mod = random.uniform(1.2, 1.3)
+                    bash_attack_mod = random.uniform(1.6, 1.8)
                     self.enemy_attack = round(self.fighting_enemy.stats[0] * bash_attack_mod)
                     self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
@@ -6824,17 +6832,17 @@ class Warrior_vs_ogre:
                         self.fighting_enemy.enemy_smash_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -6852,17 +6860,17 @@ class Warrior_vs_ogre:
                         self.fighting_enemy.enemy_bash_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -6877,7 +6885,7 @@ class Warrior_vs_ogre:
                 sleep(0.35)
                 attack_mod = random.uniform(1.2, 1.6)
 
-                print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                 print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
 
                 print(self.fighting_player.player_menu)
@@ -6902,17 +6910,17 @@ class Warrior_vs_ogre:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -6933,17 +6941,17 @@ class Warrior_vs_ogre:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -6957,7 +6965,7 @@ class Warrior_vs_ogre:
                     skill_choice = str.lower(input())
                     if skill_choice == "big swing":
                         if self.fighting_player.big_cd != 0:
-                            print("nope")
+                            print("Skill on cooldown.")
                             continue
                         big_attack_mod = random.uniform(2.1, 2.5)
                         self.attack = round(self.fighting_player.stats[0] * big_attack_mod)
@@ -6977,17 +6985,17 @@ class Warrior_vs_ogre:
                             self.fighting_player.double_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -7001,7 +7009,7 @@ class Warrior_vs_ogre:
 
                     elif skill_choice == "double swing":
                         if self.fighting_player.double_cd != 0:
-                            print("nope")
+                            print("Skill on cooldown.")
                             continue
                         print("Using " + self.fighting_player.weapon[4] + " you strike twice in one fell swoop.")
                         for i in range(2):
@@ -7023,17 +7031,17 @@ class Warrior_vs_ogre:
                             self.fighting_player.big_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -7059,7 +7067,7 @@ class Warrior_vs_ogre:
                     else:
                         print(self.fighting_player.player_items)
                         item_choice = str.lower(input())
-                        if item_choice == "shp" and "Small Health Potion" in self.fighting_player.player_items:
+                        if item_choice == "small health potion" and "Small Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 10
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -7067,7 +7075,7 @@ class Warrior_vs_ogre:
                             self.fighting_player.player_items.remove('Small Health Potion')
                             print("Your wounds begin to heal.")
                             sleep(0.5)
-                        elif item_choice == "mhp" and "Medium Health Potion" in self.fighting_player.player_items:
+                        elif item_choice == "medium health potion" and "Medium Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 20
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -7075,7 +7083,7 @@ class Warrior_vs_ogre:
                             self.fighting_player.player_items.remove('Medium Health Potion')
                             print("Your wounds begin to heal.")
                             sleep(0.5)
-                        elif item_choice == "lhp" and "Large Health Potion" in self.fighting_player.player_items:
+                        elif item_choice == "large health potion" and "Large Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 30
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -7130,7 +7138,7 @@ class Warrior_vs_death_dog:
             sleep(0.35)
             attack_mod = random.uniform(1.2, 1.6)
 
-            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
 
             print(self.fighting_player.player_menu)
@@ -7155,17 +7163,17 @@ class Warrior_vs_death_dog:
                     self.fighting_player.double_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -7186,17 +7194,17 @@ class Warrior_vs_death_dog:
                     self.fighting_player.double_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -7210,7 +7218,7 @@ class Warrior_vs_death_dog:
                 skill_choice = str.lower(input())
                 if skill_choice == "big swing":
                     if self.fighting_player.big_cd != 0:
-                        print("nope")
+                        print("Skill on cooldown.")
                         continue
                     big_attack_mod = random.uniform(2.1, 2.5)
                     self.attack = round(self.fighting_player.stats[0] * big_attack_mod)
@@ -7230,17 +7238,17 @@ class Warrior_vs_death_dog:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -7253,7 +7261,7 @@ class Warrior_vs_death_dog:
 
                 elif skill_choice == "double swing":
                     if self.fighting_player.double_cd != 0:
-                        print("nope")
+                        print("Skill on cooldown.")
                         continue
                     print("Using " + self.fighting_player.weapon[4] + " you strike twice in one fell swoop.")
                     for i in range(2):
@@ -7275,17 +7283,17 @@ class Warrior_vs_death_dog:
                         self.fighting_player.big_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -7313,13 +7321,15 @@ class Warrior_vs_death_dog:
                     # while self.combat:
                     print(self.fighting_player.player_items)
                     item_choice = str.lower(input())
-                    if item_choice == "shp":
-                        # change to functions
-                        self.fighting_player.hp += 10
-                        if self.fighting_player.hp > self.fighting_player.max_hp:
-                            self.fighting_player.hp = self.fighting_player.max_hp
+                    if item_choice == "small health potion" and "Small Health Potion" in self.fighting_player.player_items:
+                            # change to functions?
+                            self.fighting_player.hp += 10
+                            if self.fighting_player.hp > self.fighting_player.max_hp:
+                                self.fighting_player.hp = self.fighting_player.max_hp
                             self.fighting_player.player_items.remove('Small Health Potion')
-                    elif item_choice == "mhp" and "Medium Health Potion" in self.fighting_player.player_items:
+                            print("Your wounds begin to heal.")
+                            sleep(0.5)
+                    elif item_choice == "medium health potion" and "Medium Health Potion" in self.fighting_player.player_items:
                         # change to functions?
                         self.fighting_player.hp += 20
                         if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -7327,7 +7337,7 @@ class Warrior_vs_death_dog:
                         self.fighting_player.player_items.remove('Medium Health Potion')
                         print("Your wounds begin to heal.")
                         sleep(0.5)
-                    elif item_choice == "lhp" and "Large Health Potion" in self.fighting_player.player_items:
+                    elif item_choice == "large health potion" and "Large Health Potion" in self.fighting_player.player_items:
                         # change to functions?
                         self.fighting_player.hp += 30
                         if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -7369,17 +7379,17 @@ class Warrior_vs_death_dog:
                         self.fighting_enemy.enemy_drend_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -7409,8 +7419,8 @@ class Warrior_vs_death_dog:
 
                         print("The " + self.fighting_enemy.name + " tries to tear you apart.")
                         for i in range(3):
-                            dmaul_attack_mod = random.uniform(1.2, 1.3)
-                            self.enemy_attack = round(self.fighting_enemy.stats[0] * dmaul_attack_mod)
+                            dmaul_attack_mod = random.uniform(1.2, 1.4)
+                            self.enemy_attack = round(self.fighting_enemy.stats[1] * dmaul_attack_mod)
                             self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
                             # checks if enemy is defending
@@ -7427,17 +7437,17 @@ class Warrior_vs_death_dog:
                             self.fighting_enemy.enemy_drend_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -7448,7 +7458,7 @@ class Warrior_vs_death_dog:
                     elif enemy_skill == "death rend":
                         if self.fighting_enemy.enemy_drend_cd != 0:
                             continue
-                        drend_attack_mod = random.uniform(1.2, 1.3)
+                        drend_attack_mod = random.uniform(1.4, 1.6)
                         self.enemy_attack = round(self.fighting_enemy.stats[1] * drend_attack_mod)
                         self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
@@ -7467,17 +7477,17 @@ class Warrior_vs_death_dog:
                             self.fighting_enemy.enemy_dmaul_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -7495,17 +7505,17 @@ class Warrior_vs_death_dog:
                         self.fighting_enemy.enemy_drend_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -7544,17 +7554,17 @@ class Warrior_vs_death_dog:
                     self.fighting_enemy.enemy_drend_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -7584,8 +7594,8 @@ class Warrior_vs_death_dog:
 
                     print("The " + self.fighting_enemy.name + " tries to tear you apart.")
                     for i in range(3):
-                        dmaul_attack_mod = random.uniform(1.2, 1.3)
-                        self.enemy_attack = round(self.fighting_enemy.stats[0] * dmaul_attack_mod)
+                        dmaul_attack_mod = random.uniform(1.2, 1.4)
+                        self.enemy_attack = round(self.fighting_enemy.stats[1] * dmaul_attack_mod)
                         self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
                         # checks if enemy is defending
@@ -7602,17 +7612,17 @@ class Warrior_vs_death_dog:
                         self.fighting_enemy.enemy_drend_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -7623,7 +7633,7 @@ class Warrior_vs_death_dog:
                 elif enemy_skill == "death rend":
                     if self.fighting_enemy.enemy_drend_cd != 0:
                         continue
-                    drend_attack_mod = random.uniform(1.2, 1.3)
+                    drend_attack_mod = random.uniform(1.4, 1.6)
                     self.enemy_attack = round(self.fighting_enemy.stats[1] * drend_attack_mod)
                     self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
@@ -7642,17 +7652,17 @@ class Warrior_vs_death_dog:
                         self.fighting_enemy.enemy_dmaul_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -7670,17 +7680,17 @@ class Warrior_vs_death_dog:
                     self.fighting_enemy.enemy_drend_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -7695,7 +7705,7 @@ class Warrior_vs_death_dog:
                 sleep(0.35)
                 attack_mod = random.uniform(1.2, 1.6)
 
-                print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                 print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
 
                 print(self.fighting_player.player_menu)
@@ -7720,17 +7730,17 @@ class Warrior_vs_death_dog:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -7751,17 +7761,17 @@ class Warrior_vs_death_dog:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -7775,7 +7785,7 @@ class Warrior_vs_death_dog:
                     skill_choice = str.lower(input())
                     if skill_choice == "big swing":
                         if self.fighting_player.big_cd != 0:
-                            print("nope")
+                            print("Skill on cooldown.")
                             continue
                         big_attack_mod = random.uniform(2.1, 2.5)
                         self.attack = round(self.fighting_player.stats[0] * big_attack_mod)
@@ -7795,17 +7805,17 @@ class Warrior_vs_death_dog:
                             self.fighting_player.double_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -7819,7 +7829,7 @@ class Warrior_vs_death_dog:
 
                     elif skill_choice == "double swing":
                         if self.fighting_player.double_cd != 0:
-                            print("nope")
+                            print("Skill on cooldown.")
                             continue
                         print("Using " + self.fighting_player.weapon[4] + " you strike twice in one fell swoop.")
                         for i in range(2):
@@ -7841,17 +7851,17 @@ class Warrior_vs_death_dog:
                             self.fighting_player.big_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -7877,7 +7887,7 @@ class Warrior_vs_death_dog:
                     else:
                         print(self.fighting_player.player_items)
                         item_choice = str.lower(input())
-                        if item_choice == "shp" and "Small Health Potion" in self.fighting_player.player_items:
+                        if item_choice == "small health potion" and "Small Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 10
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -7885,7 +7895,7 @@ class Warrior_vs_death_dog:
                             self.fighting_player.player_items.remove('Small Health Potion')
                             print("Your wounds begin to heal.")
                             sleep(0.5)
-                        elif item_choice == "mhp" and "Medium Health Potion" in self.fighting_player.player_items:
+                        elif item_choice == "medium health potion" and "Medium Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 20
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -7893,7 +7903,7 @@ class Warrior_vs_death_dog:
                             self.fighting_player.player_items.remove('Medium Health Potion')
                             print("Your wounds begin to heal.")
                             sleep(0.5)
-                        elif item_choice == "lhp" and "Large Health Potion" in self.fighting_player.player_items:
+                        elif item_choice == "large health potion" and "Large Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 30
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -7948,7 +7958,7 @@ class Warrior_vs_dragon:
             sleep(0.35)
             attack_mod = random.uniform(1.2, 1.6)
 
-            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
 
             print(self.fighting_player.player_menu)
@@ -7973,17 +7983,17 @@ class Warrior_vs_dragon:
                     self.fighting_player.double_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -8004,17 +8014,17 @@ class Warrior_vs_dragon:
                     self.fighting_player.double_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -8028,7 +8038,7 @@ class Warrior_vs_dragon:
                 skill_choice = str.lower(input())
                 if skill_choice == "big swing":
                     if self.fighting_player.big_cd != 0:
-                        print("nope")
+                        print("Skill on cooldown.")
                         continue
                     big_attack_mod = random.uniform(2.1, 2.5)
                     self.attack = round(self.fighting_player.stats[0] * big_attack_mod)
@@ -8048,17 +8058,17 @@ class Warrior_vs_dragon:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -8071,7 +8081,7 @@ class Warrior_vs_dragon:
 
                 elif skill_choice == "double swing":
                     if self.fighting_player.double_cd != 0:
-                        print("nope")
+                        print("Skill on cooldown.")
                         continue
                     print("Using " + self.fighting_player.weapon[4] + " you strike twice in one fell swoop.")
                     for i in range(2):
@@ -8093,17 +8103,17 @@ class Warrior_vs_dragon:
                         self.fighting_player.big_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -8131,13 +8141,15 @@ class Warrior_vs_dragon:
                     # while self.combat:
                     print(self.fighting_player.player_items)
                     item_choice = str.lower(input())
-                    if item_choice == "shp":
-                        # change to functions
-                        self.fighting_player.hp += 10
-                        if self.fighting_player.hp > self.fighting_player.max_hp:
-                            self.fighting_player.hp = self.fighting_player.max_hp
+                    if item_choice == "small health potion" and "Small Health Potion" in self.fighting_player.player_items:
+                            # change to functions?
+                            self.fighting_player.hp += 10
+                            if self.fighting_player.hp > self.fighting_player.max_hp:
+                                self.fighting_player.hp = self.fighting_player.max_hp
                             self.fighting_player.player_items.remove('Small Health Potion')
-                    elif item_choice == "mhp" and "Medium Health Potion" in self.fighting_player.player_items:
+                            print("Your wounds begin to heal.")
+                            sleep(0.5)
+                    elif item_choice == "medium health potion" and "Medium Health Potion" in self.fighting_player.player_items:
                         # change to functions?
                         self.fighting_player.hp += 20
                         if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -8145,7 +8157,7 @@ class Warrior_vs_dragon:
                         self.fighting_player.player_items.remove('Medium Health Potion')
                         print("Your wounds begin to heal.")
                         sleep(0.5)
-                    elif item_choice == "lhp" and "Large Health Potion" in self.fighting_player.player_items:
+                    elif item_choice == "large health potion" and "Large Health Potion" in self.fighting_player.player_items:
                         # change to functions?
                         self.fighting_player.hp += 30
                         if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -8189,17 +8201,17 @@ class Warrior_vs_dragon:
                         self.fighting_enemy.enemy_breathe_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -8233,17 +8245,17 @@ class Warrior_vs_dragon:
                             self.fighting_enemy.enemy_breathe_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -8254,7 +8266,7 @@ class Warrior_vs_dragon:
                     elif enemy_skill == "tail whip":
                         if self.fighting_enemy.enemy_tail_cd != 0:
                             continue
-                        tail_attack_mod = random.uniform(1.2, 1.3)
+                        tail_attack_mod = random.uniform(1.6, 1.8)
                         self.enemy_attack = round(self.fighting_enemy.stats[0] * tail_attack_mod)
                         self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
@@ -8275,17 +8287,17 @@ class Warrior_vs_dragon:
                             self.fighting_enemy.enemy_breathe_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -8296,8 +8308,8 @@ class Warrior_vs_dragon:
                     elif enemy_skill == "breathe fire":
                         if self.fighting_enemy.enemy_breathe_cd != 0:
                             continue
-                        breathe_attack_mod = random.uniform(1.2, 1.3)
-                        self.enemy_attack = round(self.fighting_enemy.stats[0] * breathe_attack_mod)
+                        breathe_attack_mod = random.uniform(1.6, 1.8)
+                        self.enemy_attack = round(self.fighting_enemy.stats[2] * breathe_attack_mod)
                         self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
                         # checks if player is defending
@@ -8317,17 +8329,17 @@ class Warrior_vs_dragon:
                             self.fighting_enemy.enemy_tail_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -8347,17 +8359,17 @@ class Warrior_vs_dragon:
                         self.fighting_enemy.enemy_breathe_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -8398,17 +8410,17 @@ class Warrior_vs_dragon:
                     self.fighting_enemy.enemy_breathe_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -8442,17 +8454,17 @@ class Warrior_vs_dragon:
                         self.fighting_enemy.enemy_breathe_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -8463,7 +8475,7 @@ class Warrior_vs_dragon:
                 elif enemy_skill == "tail whip":
                     if self.fighting_enemy.enemy_tail_cd != 0:
                         continue
-                    tail_attack_mod = random.uniform(1.2, 1.3)
+                    tail_attack_mod = random.uniform(1.6, 1.8)
                     self.enemy_attack = round(self.fighting_enemy.stats[0] * tail_attack_mod)
                     self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
@@ -8484,17 +8496,17 @@ class Warrior_vs_dragon:
                         self.fighting_enemy.enemy_breathe_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -8505,8 +8517,8 @@ class Warrior_vs_dragon:
                 elif enemy_skill == "breathe fire":
                     if self.fighting_enemy.enemy_breathe_cd != 0:
                         continue
-                    breathe_attack_mod = random.uniform(1.2, 1.3)
-                    self.enemy_attack = round(self.fighting_enemy.stats[0] * breathe_attack_mod)
+                    breathe_attack_mod = random.uniform(1.6, 1.8)
+                    self.enemy_attack = round(self.fighting_enemy.stats[2] * breathe_attack_mod)
                     self.enemy_damage = self.enemy_attack - self.fighting_player.armor
 
                     # checks if player is defending
@@ -8526,17 +8538,17 @@ class Warrior_vs_dragon:
                         self.fighting_enemy.enemy_tail_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -8556,17 +8568,17 @@ class Warrior_vs_dragon:
                     self.fighting_enemy.enemy_breathe_cd -= 1
 
                 if self.fighting_player.hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("Game Over")
                     quit()
                 elif self.fighting_enemy.enemy_hp <= 0:
-                    print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                    print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                     print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                     print("You defeated the enemy" + " " + self.fighting_enemy.name)
                     self.combat = False
@@ -8581,7 +8593,7 @@ class Warrior_vs_dragon:
                 sleep(0.35)
                 attack_mod = random.uniform(1.2, 1.6)
 
-                print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                 print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
 
                 print(self.fighting_player.player_menu)
@@ -8606,17 +8618,17 @@ class Warrior_vs_dragon:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -8637,17 +8649,17 @@ class Warrior_vs_dragon:
                         self.fighting_player.double_cd -= 1
 
                     if self.fighting_player.hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("Game Over")
                         quit()
                     elif self.fighting_enemy.enemy_hp <= 0:
-                        print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                        print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                         print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                         print("You defeated the enemy" + " " + self.fighting_enemy.name)
                         self.combat = False
@@ -8661,7 +8673,7 @@ class Warrior_vs_dragon:
                     skill_choice = str.lower(input())
                     if skill_choice == "big swing":
                         if self.fighting_player.big_cd != 0:
-                            print("nope")
+                            print("Skill on cooldown.")
                             continue
                         big_attack_mod = random.uniform(2.1, 2.5)
                         self.attack = round(self.fighting_player.stats[0] * big_attack_mod)
@@ -8681,17 +8693,17 @@ class Warrior_vs_dragon:
                             self.fighting_player.double_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -8705,7 +8717,7 @@ class Warrior_vs_dragon:
 
                     elif skill_choice == "double swing":
                         if self.fighting_player.double_cd != 0:
-                            print("nope")
+                            print("Skill on cooldown.")
                             continue
                         print("Using " + self.fighting_player.weapon[4] + " you strike twice in one fell swoop.")
                         for i in range(2):
@@ -8727,17 +8739,17 @@ class Warrior_vs_dragon:
                             self.fighting_player.big_cd -= 1
 
                         if self.fighting_player.hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + " " + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_player.hp <= 0 and self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("Game Over")
                             quit()
                         elif self.fighting_enemy.enemy_hp <= 0:
-                            print("Player HP:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
+                            print("Nameless:" + " " + str(self.fighting_player.hp) + "/" + str(self.fighting_player.max_hp))
                             print(self.fighting_enemy.name + ":" + str(self.fighting_enemy.enemy_hp) + "/" + str(self.fighting_enemy.enemy_max_hp))
                             print("You defeated the enemy" + " " + self.fighting_enemy.name)
                             self.combat = False
@@ -8763,7 +8775,7 @@ class Warrior_vs_dragon:
                     else:
                         print(self.fighting_player.player_items)
                         item_choice = str.lower(input())
-                        if item_choice == "shp" and "Small Health Potion" in self.fighting_player.player_items:
+                        if item_choice == "small health potion" and "Small Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 10
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -8771,7 +8783,7 @@ class Warrior_vs_dragon:
                             self.fighting_player.player_items.remove('Small Health Potion')
                             print("Your wounds begin to heal.")
                             sleep(0.5)
-                        elif item_choice == "mhp" and "Medium Health Potion" in self.fighting_player.player_items:
+                        elif item_choice == "medium health potion" and "Medium Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 20
                             if self.fighting_player.hp > self.fighting_player.max_hp:
@@ -8779,7 +8791,7 @@ class Warrior_vs_dragon:
                             self.fighting_player.player_items.remove('Medium Health Potion')
                             print("Your wounds begin to heal.")
                             sleep(0.5)
-                        elif item_choice == "lhp" and "Large Health Potion" in self.fighting_player.player_items:
+                        elif item_choice == "large health potion" and "Large Health Potion" in self.fighting_player.player_items:
                             # change to functions?
                             self.fighting_player.hp += 30
                             if self.fighting_player.hp > self.fighting_player.max_hp:
