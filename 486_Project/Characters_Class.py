@@ -1,4 +1,4 @@
-#dndbeyond
+# dndbeyond used as reference for enemies
 
 class Warrior:
     """
@@ -9,8 +9,8 @@ class Warrior:
         # [6, 4, 4, 6] original
         self.base_stats = [6, 4, 4, 6]
 
-        # weapon
-        self.weapon = [1, 0, 0, 1, "Ole Trusty Sword"]
+        # weapon affects base stats
+        self.weapon = [2, 0, 0, 2, "Ole Trusty Sword"]
 
         # total stats geekforgeeks.com
         self.stats = [self.base_stats[i] + self.weapon[i] for i in range(len(self.base_stats))]
@@ -19,7 +19,7 @@ class Warrior:
         self.head = 0
         self.chest = 2
         self.hands = 1
-        self.legs = 1
+        self.legs = 2
 
         # total armor
         self.armor = self.head + self.chest + self.hands + self.legs
@@ -42,7 +42,7 @@ class Warrior:
         [2]Double Swing
         '''
         # counter
-        # lunge surge forawd to run them through
+        # lunge surge forward to run them through
 
         # player skill cooldowns
         self.big_cdt = 4
@@ -51,13 +51,15 @@ class Warrior:
         self.double_cd = 0
 
         # will contain players items
-        self.player_items = ["Small Health Potion"]
+        self.player_items = ["Small Health Potion", "Small Health Potion", "Medium Health Potion", "Medium Health Potion"]
 
     # idea is to be used when player changes their constitution stat value
     def new_max_hp(self):
+        divide_hp = self.max_hp / self.hp
         self.max_hp = self.stats[3] * 4
+        self.hp = int(self.max_hp // divide_hp)
 
-    # function for when player gets new weapon
+    # idea for function for when player gets new weapon
     def new_weapon(self):
         pass
 
@@ -199,7 +201,7 @@ class Giant_lizard:
         self.name = "Giant Lizard"
 
         # [strength, dexterity, intelligence, constitution]
-        self.stats = [4, 5, 4, 7]
+        self.stats = [4, 6, 4, 6]
 
         # armor for this enemy
         self.enemy_armor = 2
@@ -265,7 +267,8 @@ class Ogre:
         self.name = "Ogre"
 
         # [strength, dexterity, intelligence, constitution]
-        self.stats = [10, 6, 5, 9]
+        # original [10, 6, 5, 9]
+        self.stats = [9, 6, 5, 9]
 
         # armor for this enemy
         self.enemy_armor = 2
@@ -296,7 +299,8 @@ class Bugbear:
         self.name = "Bugbear"
 
         # [strength, dexterity, intelligence, constitution]
-        self.stats = [10, 7, 5, 8]
+        # original [10, 7, 5, 8]
+        self.stats = [8, 7, 5, 8]
 
         # armor for this enemy
         self.enemy_armor = 2
@@ -327,7 +331,8 @@ class Goblin:
         self.name = "Goblin"
 
         # [strength, dexterity, intelligence, constitution]
-        self.stats = [8, 11, 5, 6]
+        # original [8, 11, 5, 6]
+        self.stats = [6, 8, 5, 6]
 
         # armor for this enemy
         self.enemy_armor = 2
@@ -358,7 +363,8 @@ class Death_dog:
         self.name = "Death Dog"
 
         # [strength, dexterity, intelligence, constitution]
-        self.stats = [7, 10, 5, 8]
+        # original [7, 10, 5, 8]
+        self.stats = [7, 8, 5, 8]
 
         # armor for this enemy
         self.enemy_armor = 2
@@ -389,6 +395,7 @@ class Dragon:
         self.name = "Dragon"
 
         # [strength, dexterity, intelligence, constitution]
+        # original [9, 7, 9, 9]
         self.stats = [9, 7, 9, 9]
 
         # armor for this enemy

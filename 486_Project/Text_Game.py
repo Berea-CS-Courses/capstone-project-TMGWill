@@ -8,8 +8,8 @@ from adventurelib import *
 def select_class():
     while True:
         print("""
-        Available Classes:
-        [1]Warrior
+Available Classes:
+[1]Warrior
         """)
 
         choice = str.lower(input("Choose your class."))
@@ -19,7 +19,7 @@ def select_class():
             break
 
         else:
-            print("nope")
+            print("You must select a class.")
 
     return player_class
 
@@ -28,14 +28,11 @@ def select_class():
 Story().title()
 
 # player
-# player = Warrior()
-# player = story.select_class()
 player = select_class()
-
 
 # story intro
 Story().intro()
-# sleep(5)
+sleep(5)
 
 # sets state for all rooms to be None
 Room.state = None
@@ -78,7 +75,7 @@ Convenient_Event = Room("""
 A campfire is still lit but your eyes are drawn to the armor lying there. No one's there but they could come back any moment. [advance/retreat]
 """)
 New_Weapon_Event = Room("""
-You see a Corrupted Swordsman who appears stronger than the others. You wonder if you should confront from or withdraw till they leave. [confront/withdraw]
+You see a Corrupted Swordsman who appears ready for a fight. You wonder if you should confront from or withdraw till they leave. [confront/withdraw]
 """)
 # close to suffocating?
 Monster_Starting_Room = Room("""
@@ -92,14 +89,19 @@ Out of the corner of your eye you notice some creature lurking. As it realizes t
 """)
 # with your back to it attacks
 Sleeping_Event = Room("""
-You see what seems like a Bugbear sleeping not too far away. You could take your chances to sneak around and see if you can find anything or walk away and not risk it. [sneak/leave]
+You see what seems like a Bugbear sleeping not too far away. 
+You could take your chances to sneak around and see if you can find anything or walk away and not risk it. [sneak/leave]
 """)
 Big_Event = Room("""
-You see before you a creature of monstrous size and strength. This monster before you is an ogre which almost guarantees death but would be a worthy feat to slay such a creature.
+You see before you a creature of monstrous size and strength. 
+This monster before you is an ogre which almost guarantees death but would be a worthy feat to slay such a creature.
+[glory/life]
 """)
 # is this a sign or some kind of warning; before you can continue to think
 Death_Dog_Encounter = Room("""
-Two heads are better than one, and twice as dangerous. This monster is a Death Dog and you consider if this is some kind of sign or warning for the battle ahead. Before you can continue to think it attacks like a creature from Hell.
+Two heads are better than one, and twice as dangerous. 
+This monster is a Death Dog and you consider if this is some kind of sign or warning for the battle ahead. 
+Before you can continue to think it attacks like a creature from Hell.
 """)
 Dragon_Intro = Room(Story().final_dialogue())
 Dragon_Encounter = Room("""
@@ -116,6 +118,7 @@ Corrupted_Knight_Encounter.state = "combat"
 Corrupted_Acolyte_Encounter.state = "combat"
 Convenient_Event.state = "event"
 New_Weapon_Event.state = "event"
+Bugbear_Encounter.state = "combat"
 Goblin_Encounter.state = "combat"
 Sleeping_Event.state = "event"
 Big_Event.state = "event"
@@ -148,13 +151,14 @@ Nest_Event.north = Giant_Eagle_Encounter
 Dead_Man_Event.west = Giant_Eagle_Encounter
 Dead_Man_Event.east = Giant_Lizard_Encounter
 Giant_Lizard_Encounter.north = Human_Starting_Room
-Human_Starting_Room.west = Corrupted_Swordsman_Encounter
-Corrupted_Swordsman_Encounter.north = Corrupted_Knight_Encounter
-Corrupted_Knight_Encounter.west = Corrupted_Acolyte_Encounter
-Corrupted_Knight_Encounter.north = New_Weapon_Event
-Corrupted_Acolyte_Encounter.west = Convenient_Event
-New_Weapon_Event.east = Monster_Starting_Room
+Human_Starting_Room.west = New_Weapon_Event
+Corrupted_Swordsman_Encounter.south = Corrupted_Knight_Encounter
+Corrupted_Knight_Encounter.west = Convenient_Event
+Corrupted_Knight_Encounter.south = New_Weapon_Event
+Corrupted_Acolyte_Encounter.east = Convenient_Event
+# New_Weapon_Event.east = Monster_Starting_Room
 Monster_Starting_Room.north = Bugbear_Encounter
+Monster_Starting_Room.west = Corrupted_Swordsman_Encounter
 Bugbear_Encounter.north = Goblin_Encounter
 Goblin_Encounter.west = Sleeping_Event
 Goblin_Encounter.north = Death_Dog_Encounter
@@ -214,6 +218,13 @@ def go(direction):
         print(current_room)
         current_room.state = "empty"
 
+    # used for game ending
+    if current_room is Dragon_Encounter and current_room.state == "empty":
+        Story().epilogue()
+        name = input("What's your name brave hero?")
+        print("Now everyone will know the name " + name + " and tell your story for years to come.")
+        quit()
+
 
 # possible Nest_Event outcome
 @when('investigate')
@@ -222,8 +233,161 @@ def investigate():
         print("This bird of prey attacks the intruder messing with their home.")
         Warrior_vs_giant_eagle_fight(fighting_player=player, fighting_enemy=Nest_Event.enemy).decide_warrior_vs_giant_eagle()
         print("After dealing with that bird and rifling through the nesting, you see that the shiny nesting were some decent gauntlets")
+        # player.hands = 3
         player.hands = 4
         current_room.description = "Only the remains of battle and a broken nest are left behind."
+        print("Exit(s):" + " " + str(current_room.exits()))
+        print(current_room)
+        current_room.state = "empty"
+
+
+# possible Nest_Event outcome
+@when('ignore')
+def ignore():
+    if current_room is Nest_Event and current_room.state == "event":
+        current_room.description = "You decide that it would better to play it safe and avoid being bird food."
+        print("Exit(s):" + " " + str(current_room.exits()))
+        print(current_room)
+        current_room.state = "empty"
+
+
+# possible Dead_Man_Event outcome
+@when('rummage')
+def rummage():
+    if current_room is Dead_Man_Event and current_room.state == "event":
+        print("After searching the body you managed to find some potions that clean and some covered in blood.")
+        print("You might as well keep them since the dead won't be needing it.")
+        player.player_items.append("Medium Health Potion")
+        player.player_items.append("Medium Health Potion")
+        player.player_items.append("Large Health Potion")
+        current_room.description = "All that remains is the memory of assistance from someone soon to be one with the world."
+        print("Exit(s):" + " " + str(current_room.exits()))
+        print(current_room)
+        current_room.state = "empty"
+
+
+# possible Dead_Man_Event outcome
+@when('respect')
+def respect():
+    if current_room is Dead_Man_Event and current_room.state == "event":
+        print("It feels like the dead should be left to rest. You silently and quickly pay your respects and continue onward.")
+        current_room.description = "All that's left is a reminder of what could happen if you're not careful."
+        print("Exit(s):" + " " + str(current_room.exits()))
+        print(current_room)
+        current_room.state = "empty"
+
+
+# possible Convenient_Event outcome
+@when('advance')
+def advance():
+    if current_room is Convenient_Event and current_room.state == "event":
+        print("You go forward to see what you find. Not too long after you walk forward you hear the clank of armor.")
+        print("They might not be a good guy but you are trying to steal from them.")
+        Warrior_vs_corrupted_knight_fight(fighting_player=player, fighting_enemy=Convenient_Event.enemy).decide_warrior_vs_corrupted_knight()
+        print("You manage to acquire a pretty decent helmet and greaves")
+        # player.head = 1
+        # player.legs = 2
+        player.head = 2
+        player.legs = 3
+        current_room.description = "The dead knight is a reminder that everything has price."
+        print("Exit(s):" + " " + str(current_room.exits()))
+        print(current_room)
+        current_room.state = "empty"
+
+
+# possible Convenient_Event outcome
+@when('retreat')
+def retreat():
+    if current_room is Convenient_Event and current_room.state == "event":
+        print("It seems smarter not to take the risk and avoid confrontation.")
+        current_room.description = "Avoiding this area would be the smart move."
+        print("Exit(s):" + " " + str(current_room.exits()))
+        print(current_room)
+        current_room.state = "empty"
+
+
+# possible New_Weapon_Event outcome
+@when('confront')
+def confront():
+    if current_room is New_Weapon_Event and current_room.state == "event":
+        print("It'd be faster to face them head-on than waiting around.")
+        Warrior_vs_corrupted_swordsman_fight(fighting_player=player, fighting_enemy=New_Weapon_Event.enemy).decide_warrior_vs_corrupted_swordsman()
+        print("It almost feels like the swordsman's blade speaks out to you.")
+        print("It seems like a fine weapon so you take it for yourself.")
+        player.weapon = [3, 3, 0, 3, "Damaged Corruption"]
+        player.stats = [player.base_stats[i] + player.weapon[i] for i in range(len(player.base_stats))]
+        player.new_max_hp()
+        current_room.description = " This is where you got that dark blade."
+        print("Exit(s):" + " " + str(current_room.exits()))
+        print(current_room)
+        current_room.state = "empty"
+
+
+# possible New_Weapon_Event outcome
+@when('withdraw')
+def withdraw():
+    if current_room is New_Weapon_Event and current_room.state == "event":
+        print("You decide to wait it out but use the time to sharpen your blade.")
+        player.weapon = [3, 1, 0, 2, "Sharp Trusty Sword"]
+        player.stats = [player.base_stats[i] + player.weapon[i] for i in range(len(player.base_stats))]
+        current_room.description = " This where you spent the time to sharpen your trusty sword."
+        print("Exit(s):" + " " + str(current_room.exits()))
+        print(current_room)
+        current_room.state = "empty"
+
+
+# possible Sleeping_Event outcome
+@when('sneak')
+def sneak():
+    if current_room is Sleeping_Event and current_room.state == "event":
+        print("As you get close, you notice movement from the Bugbear and realize it was waiting to pounce.")
+        Warrior_vs_bugbear(fighting_player=player, fighting_enemy=Sleeping_Event.enemy).decide_warrior_vs_bugbear()
+        player.player_items.append("Medium Health Potion")
+        player.player_items.append("Medium Health Potion")
+        player.player_items.append("Large Health Potion")
+        player.player_items.append("Large Health Potion")
+        print("You take your spoils of battle which were some useful looking potions.")
+        current_room.description = "All that remains is a monster's failed ambush."
+        print("Exit(s):" + " " + str(current_room.exits()))
+        print(current_room)
+        current_room.state = "empty"
+
+
+# possible Sleeping_Event outcome
+@when('leave')
+def leave():
+    if current_room is Sleeping_Event and current_room.state == "event":
+        print("You think its better to be safe than sorry and decide to leave things be and move on.")
+        current_room.description = " It's better to let sleeping cats...or dogs...sleep or whatever they say."
+        print("Exit(s):" + " " + str(current_room.exits()))
+        print(current_room)
+        current_room.state = "empty"
+
+
+# possible Big_Event outcome
+@when('glory')
+def glory():
+    if current_room is Big_Event and current_room.state == "event":
+        print(" Today is a good day to die.")
+        Warrior_vs_ogre(fighting_player=player, fighting_enemy=Big_Event.enemy).decide_warrior_vs_ogre()
+        print("After that battle you take a trophy as proof of your victory.")
+        print("Oddly and grossly enough, this Ogre's Toothpick seems like a pretty decent weapon.")
+        player.weapon = [4, 0, 0, 4, "Ogre's Toothpick"]
+        # player.weapon = [6, 0, 0, 6, "Ogre's Toothpick"]
+        player.stats = [player.base_stats[i] + player.weapon[i] for i in range(len(player.base_stats))]
+        player.new_max_hp()
+        current_room.description = " This is where you got that gross but pretty strong weapon."
+        print("Exit(s):" + " " + str(current_room.exits()))
+        print(current_room)
+        current_room.state = "empty"
+
+
+# possible Big_Event outcome
+@when('life')
+def life():
+    if current_room is Big_Event and current_room.state == "event":
+        print("You'd rather live to see another day.")
+        current_room.description = " This where you spent the time to sharpen your trusty sword."
         print("Exit(s):" + " " + str(current_room.exits()))
         print(current_room)
         current_room.state = "empty"
