@@ -28,14 +28,11 @@ Available Classes:
 Story().title()
 
 # player
-# player = Warrior()
-# player = story.select_class()
 player = select_class()
-
 
 # story intro
 Story().intro()
-# sleep(5)
+sleep(5)
 
 # sets state for all rooms to be None
 Room.state = None
@@ -182,8 +179,7 @@ Death_Dog_Encounter.combat = Warrior_vs_death_dog(fighting_player=player, fighti
 Dragon_Encounter.combat = Warrior_vs_dragon(fighting_player=player, fighting_enemy=Dragon_Encounter.enemy).decide_warrior_vs_dragon
 
 # beginning of code for game
-# Goblin_Encounter
-current_room = Dragon_Intro
+current_room = Beginning_Room
 print("Exit(s):" + " " + str(current_room.exits()))
 print(current_room)
 
@@ -224,9 +220,7 @@ def go(direction):
 
     # used for game ending
     if current_room is Dragon_Encounter and current_room.state == "empty":
-        # print("\n")
         Story().epilogue()
-        # print("\n")
         name = input("What's your name brave hero?")
         print("Now everyone will know the name " + name + " and tell your story for years to come.")
         quit()
