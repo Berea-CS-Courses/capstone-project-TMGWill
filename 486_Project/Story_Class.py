@@ -14,6 +14,7 @@ as time of good versus evil. In order to save this land you must overcome many t
 have the chance to defeat the dragon that plagues us, corrupting the land and it's inhabitants.
         """)
 
+# revise
     def epilogue(self):
         print("""
 With the final blow being struck, this waking nightmare turns into a dream as you are victorious having felled this 
